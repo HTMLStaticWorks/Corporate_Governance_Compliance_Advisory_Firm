@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veritas AI Boardroom Platform — Coming Soon | Veritas & Crown</title>
+  <meta name="description" content="Early access preview for the Veritas AI Boardroom Intelligence & Regulatory Compliance Platform.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Veritas and Crown Homepage">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" id="desktopThemeToggle" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <a href="index.html" class="btn btn-outline">Back to Firm Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: var(--space-3xl) var(--space-md); text-align: center;">
+    <div class="container" style="max-width: 820px;">
+      
+      <span class="section-tag" style="margin-bottom: var(--space-sm);">
+        <i class="ph ph-cpu"></i> Next-Generation Fiduciary Technology
+      </span>
+
+      <h1 style="font-size: clamp(2.4rem, 4.5vw, 3.8rem); line-height: 1.15; margin-bottom: var(--space-md);">
+        Veritas AI: Autonomous Boardroom Compliance Intelligence
+      </h1>
+
+      <p style="font-size: var(--size-lead); line-height: 1.7; color: var(--color-text-muted); margin-bottom: var(--space-2xl); max-width: 680px; margin-left: auto; margin-right: auto;">
+        We are finalizing our private, air-gapped regulatory engine providing automated SEC comment letter predictive indexing, continuous Delaware Caremark compliance tracking, and zero-knowledge board vaulting.
+      </p>
+
+      <!-- Countdown Timer Box -->
+      <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-2xl);">
+        <div class="card card-center" style="min-width: 110px; padding: var(--space-md);">
+          <div style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;" id="cdDays">45</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle); text-transform: uppercase;">Days</span>
+        </div>
+        <div class="card card-center" style="min-width: 110px; padding: var(--space-md);">
+          <div style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;" id="cdHours">14</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle); text-transform: uppercase;">Hours</span>
+        </div>
+        <div class="card card-center" style="min-width: 110px; padding: var(--space-md);">
+          <div style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;" id="cdMinutes">32</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle); text-transform: uppercase;">Minutes</span>
+        </div>
+        <div class="card card-center" style="min-width: 110px; padding: var(--space-md);">
+          <div style="font-family: var(--font-heading); font-size: 2.8rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;" id="cdSeconds">18</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle); text-transform: uppercase;">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Early-Access Registration Form -->
+      <div class="card" style="max-width: 580px; margin: 0 auto; padding: var(--space-xl); text-align: left;">
+        <h3 style="margin-bottom: var(--space-xs); text-align: center;">Request VIP Boardroom Pilot Access</h3>
+        <p style="font-size: 0.9rem; color: var(--color-text-muted); text-align: center; margin-bottom: var(--space-md);">
+          Restricted to public company directors, general counsels, and audit chairs.
+        </p>
+
+        <form data-validate id="waitlistForm">
+          <div class="form-group">
+            <label class="form-label">Corporate Email</label>
+            <input type="email" class="form-input" placeholder="director@enterprise.com" required>
+            <div class="field-error">Please provide an authorized corporate email.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Enterprise Entity / Exchange</label>
+            <input type="text" class="form-input" placeholder="e.g. Apex Global Corp (NYSE)" required>
+            <div class="field-error">Enterprise entity is required.</div>
+          </div>
+          <div class="form-alert"></div>
+          <button type="submit" class="btn btn-accent" style="width: 100%;">
+            <i class="ph ph-envelope"></i> Request Early Access Token
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container" style="text-align: center;">
+      <p style="margin-bottom: 0;">© 2026 Veritas & Crown Governance Partners LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

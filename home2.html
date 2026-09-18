@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veritas & Crown — Home 2: Fiduciary Diagnostic & Executive Advisory</title>
+  <meta name="description" content="Interactive Governance Risk & Compliance Diagnostic Engine for public boards, audit committees, and institutional directors.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       SITE HEADER / NAVBAR (Breakpoints: > 1024px desktop, <= 1024px drawer)
+       ======================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      
+      <a href="index.html" class="logo" aria-label="Veritas and Crown Homepage">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link active">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" id="desktopThemeToggle" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Slide Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-nav">
+      <li><a href="index.html" class="drawer-link"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="home2.html" class="drawer-link active"><i class="ph ph-presentation-chart"></i> Home 2</a></li>
+      <li><a href="services.html" class="drawer-link"><i class="ph ph-briefcase"></i> Services</a></li>
+      <li><a href="about.html" class="drawer-link"><i class="ph ph-buildings"></i> About</a></li>
+      <li><a href="blog.html" class="drawer-link"><i class="ph ph-article"></i> Blog</a></li>
+      <li><a href="contact.html" class="drawer-link"><i class="ph ph-envelope"></i> Contact</a></li>
+      <li><a href="dashboard.html" class="drawer-link"><i class="ph ph-gauge"></i> Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <div class="drawer-controls-row">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       EDITORIAL SPLIT HERO (HOME 2)
+       ======================================================================== -->
+  <section class="hero-section" id="hero2">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <div>
+          <span class="section-tag"><i class="ph ph-compass"></i> Board Strategic Intelligence</span>
+          <h1 class="hero-title" style="margin-bottom: var(--space-md);">
+            Fiduciary Vigilance in an Age of Unprecedented Regulatory Velocity.
+          </h1>
+          <p class="hero-desc">
+            Public boards face unprecedented legal exposure from Delaware Caremark liability, SEC cyber disclosures, and activist proxy campaigns. Our diagnostic framework identifies oversight vulnerabilities before institutional regulators do.
+          </p>
+          <div class="hero-actions">
+            <a href="#diagnostic" class="btn btn-accent"><i class="ph ph-lightning"></i> Launch Risk Calculator</a>
+            <a href="contact.html" class="btn btn-outline"><i class="ph ph-calendar"></i> Book Board Evaluation</a>
+          </div>
+        </div>
+
+        <div style="background-color: var(--color-card-bg); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-xl); box-shadow: var(--shadow-hover);">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: var(--space-md); padding-bottom: var(--space-sm); border-bottom: 1px solid var(--color-border);">
+            <div class="card-icon" style="margin-bottom: 0;"><i class="ph ph-newspaper-clipping"></i></div>
+            <div>
+              <h4 style="margin-bottom: 2px;">2026 Executive Briefing</h4>
+              <span style="font-size: 0.85rem; color: var(--color-text-subtle);">From the Desk of Senior Managing Partner</span>
+            </div>
+          </div>
+          <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: var(--space-md);">
+            "Today's regulatory environment does not forgive passive board oversight. SEC enforcement now holds individual audit and nominating committee chairs directly accountable for compliance failures. Proactive documentation is your single strongest legal defense."
+          </p>
+          <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem;">
+            <span style="color: var(--color-accent); font-weight: var(--weight-btn);">Arthur Pendelton, Senior Partner</span>
+            <a href="blog-single.html" style="color: var(--color-primary); font-weight: var(--weight-btn); text-decoration: underline;">Read Full Briefing</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       INTERACTIVE GOVERNANCE & COMPLIANCE DIAGNOSTIC ENGINE (STEP 9.2)
+       ======================================================================== -->
+  <section class="section section-alt" id="diagnostic">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph ph-chart-polar"></i> Interactive Risk Engine</span>
+        <h2 class="section-title">Enterprise Governance Diagnostic Calculator</h2>
+        <p class="section-desc">
+          Calibrate your enterprise parameters to calculate your Boardroom Governance Quality Index and uncover potential fiduciary blind spots in real time.
+        </p>
+      </div>
+
+      <div class="diagnostic-container">
+        <div class="diagnostic-grid">
+          
+          <!-- Sliders Left -->
+          <div class="diagnostic-controls">
+            <h3 style="margin-bottom: var(--space-lg);"><i class="ph ph-sliders" style="color: var(--color-accent);"></i> Governance Parameters</h3>
+
+            <!-- Parameter 1 -->
+            <div class="diagnostic-field">
+              <div class="diagnostic-field-header">
+                <span class="diagnostic-field-label">1. Independent Director Ratio</span>
+                <span class="diagnostic-field-val" id="valIndependence">75%</span>
+              </div>
+              <input type="range" class="range-slider" id="diagIndependence" min="30" max="100" value="75">
+              <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Percentage of non-executive directors without material financial ties.</span>
+            </div>
+
+            <!-- Parameter 2 -->
+            <div class="diagnostic-field">
+              <div class="diagnostic-field-header">
+                <span class="diagnostic-field-label">2. Annual Audit Committee Cadence</span>
+                <span class="diagnostic-field-val" id="valAuditFreq">3x / year</span>
+              </div>
+              <input type="range" class="range-slider" id="diagAuditFreq" min="1" max="4" value="3">
+              <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Scheduled forensic reviews with external independent accounting inspectors.</span>
+            </div>
+
+            <!-- Parameter 3 -->
+            <div class="diagnostic-field">
+              <div class="diagnostic-field-header">
+                <span class="diagnostic-field-label">3. ESG & Climate Disclosure Assurance</span>
+                <span class="diagnostic-field-val" id="valEsg">70%</span>
+              </div>
+              <input type="range" class="range-slider" id="diagEsg" min="10" max="100" value="70">
+              <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Alignment with SEC Scope 1 & 2 emissions and EU CSRD reporting mandates.</span>
+            </div>
+
+            <!-- Parameter 4 -->
+            <div class="diagnostic-field">
+              <div class="diagnostic-field-header">
+                <span class="diagnostic-field-label">4. AI & Cyber Fiduciary Safeguards</span>
+                <span class="diagnostic-field-val" id="valCyber">65%</span>
+              </div>
+              <input type="range" class="range-slider" id="diagCyber" min="10" max="100" value="65">
+              <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Formal Board protocol for Item 106 4-day cyber incident reporting.</span>
+            </div>
+
+            <div style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--color-border); display: flex; align-items: center; gap: 12px;">
+              <i class="ph ph-info" style="color: var(--color-accent); font-size: 1.3rem;"></i>
+              <span style="font-size: 0.85rem; color: var(--color-text-muted);">
+                Algorithm verified against Delaware General Corporation Law § 141 and SEC Division of Corporation Finance standards.
+              </span>
+            </div>
+          </div>
+
+          <!-- Live Score Readout Right -->
+          <div class="score-card">
+            <h4 style="margin-bottom: var(--space-md);">Governance Health Index</h4>
+
+            <div class="score-circle">
+              <div class="score-number" id="diagScore">73</div>
+              <span class="score-scale">out of 100</span>
+            </div>
+
+            <div class="score-status-badge badge-medium" id="diagStatusBadge">
+              Substantially Compliant
+            </div>
+
+            <p style="font-size: 0.92rem; line-height: 1.6; margin-bottom: var(--space-xl); text-align: center;" id="diagSummaryText">
+              Solid baseline framework with minor compliance vulnerabilities in cross-border disclosure timing or audit committee rotation. Recommended for targeted Boardroom Effectiveness Audit.
+            </p>
+
+            <a href="contact.html" class="btn btn-accent" style="width: 100%;">
+              <i class="ph ph-file-pdf"></i> Request Custom Board Audit
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4-STAGE ADVISORY ENGAGEMENT PROTOCOL
+       ======================================================================== -->
+  <section class="section" id="engagement-protocol">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph ph-git-commit"></i> Engagement Methodology</span>
+        <h2 class="section-title">The 4-Stage Advisory Protocol</h2>
+        <p class="section-desc">
+          A structured, confidential advisory roadmap engineered to insulate boards from regulatory enforcement and derivative claims.
+        </p>
+      </div>
+
+      <div class="grid grid-4">
+        
+        <div class="card card-center">
+          <div class="card-icon">1</div>
+          <h3 style="margin-bottom: 8px;">Diagnostic Audit</h3>
+          <p style="text-align: center; font-size: 0.95rem;">
+            Confidential 360° evaluation of board charters, committee minutes, SEC comment letter history, and director independence documentation.
+          </p>
+        </div>
+
+        <div class="card card-center">
+          <div class="card-icon">2</div>
+          <h3 style="margin-bottom: 8px;">Charter Architecture</h3>
+          <p style="text-align: center; font-size: 0.95rem;">
+            Drafting bespoke fiduciary controls, whistleblower triaging protocols, and Delaware Caremark compliance recording systems.
+          </p>
+        </div>
+
+        <div class="card card-center">
+          <div class="card-icon">3</div>
+          <h3 style="margin-bottom: 8px;">Board Simulation</h3>
+          <p style="text-align: center; font-size: 0.95rem;">
+            Executive table-top simulations testing board crisis readiness for cyber breaches, hostile shareholder proxy battles, or sudden SEC inquiries.
+          </p>
+        </div>
+
+        <div class="card card-center">
+          <div class="card-icon">4</div>
+          <h3 style="margin-bottom: 8px;">Continuous Oversight</h3>
+          <p style="text-align: center; font-size: 0.95rem;">
+            24/7 regulatory tracking with our client portal, providing quarterly assurance opinions for annual proxy statements and institutional investors.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       BOARDROOM CONSULTATION CALLOUT
+       ======================================================================== -->
+  <section class="section section-dark" id="board-callout">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--space-xl);">
+        <div style="max-width: 650px;">
+          <h2 style="color: #ffffff; margin-bottom: var(--space-sm);">Need a Confidential Boardroom Briefing?</h2>
+          <p style="color: rgba(255, 255, 255, 0.82); font-size: var(--size-lead);">
+            Our Senior Advisory Fellows are available to present directly to your Nominating, Governance, or Audit Committee in executive session.
+          </p>
+        </div>
+        <div>
+          <a href="contact.html" class="btn btn-accent"><i class="ph ph-phone-call"></i> Arrange Private Briefing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <a href="index.html" class="logo" style="color: #ffffff; margin-bottom: var(--space-md);">
+            <span class="logo-mark"><i class="ph ph-scales"></i></span>
+            <span>Veritas & Crown</span>
+          </a>
+          <p style="margin-bottom: var(--space-md);">
+            Premier international corporate governance, board advisory, regulatory compliance defense, and fiduciary oversight counsel.
+          </p>
+          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">
+            Offices: New York • London • Singapore • Zurich • Washington D.C.
+          </div>
+        </div>
+
+        <div>
+          <h4>Advisory Practices</h4>
+          <div class="footer-links">
+            <a href="services.html#board-composition">Board Composition</a>
+            <a href="services.html#regulatory-compliance">SEC & DOJ Defense</a>
+            <a href="services.html#esg-oversight">ESG Governance</a>
+            <a href="services.html#erm-internal-controls">ERM & SOX 404</a>
+            <a href="services.html#exec-comp-ethics">Executive Ethics</a>
+            <a href="services.html#ai-cyber-governance">AI & Cyber Oversight</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Firm & Intelligence</h4>
+          <div class="footer-links">
+            <a href="about.html">Institutional Heritage</a>
+            <a href="about.html#leadership">Senior Advisory Fellows</a>
+            <a href="blog.html">Governance Intelligence Hub</a>
+            <a href="blog-single.html">SEC AI Whitepaper</a>
+            <a href="coming-soon.html">AI Governance Engine</a>
+            <a href="dashboard.html">Client Portal</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Board Engagement</h4>
+          <div class="footer-links">
+            <a href="contact.html">Confidential Consultation</a>
+            <a href="contact.html#locations">Global Office Directory</a>
+            <a href="home2.html#diagnostic">Governance Diagnostic</a>
+            <a href="login.html">Client Login</a>
+            <a href="register.html">Entity Onboarding</a>
+            <a href="404.html">Security Docket 404</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Veritas & Crown Governance Partners LLC. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="about.html#charter" style="color: inherit;">Global Ethics Charter</a>
+          <a href="about.html" style="color: inherit;">Confidentiality Standard</a>
+          <a href="contact.html" style="color: inherit;">Encrypted Communications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

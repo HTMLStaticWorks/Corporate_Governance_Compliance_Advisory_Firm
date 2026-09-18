@@ -1,0 +1,83 @@
+/* ==========================================================================
+   VERITAS & CROWN — CORPORATE GOVERNANCE & COMPLIANCE ADVISORY FIRM
+   Dedicated RTL (Right-to-Left) Stylesheet
+   ========================================================================== */
+
+html[dir="rtl"],
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   1. MOBILE DRAWER SLIDE OVERRIDE (Must slide from LEFT in RTL mode)
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .mobile-drawer,
+body.rtl .mobile-drawer {
+  left: 0;
+  right: auto;
+  transform: translateX(-100%);
+  box-shadow: 8px 0 32px rgba(0, 0, 0, 0.25);
+}
+
+html[dir="rtl"] .mobile-drawer.active,
+body.rtl .mobile-drawer.active {
+  transform: translateX(0);
+}
+
+/* --------------------------------------------------------------------------
+   2. TYPOGRAPHY & TEXT ALIGNMENTS
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .section-header,
+body.rtl .section-header {
+  text-align: center;
+}
+
+html[dir="rtl"] .accordion-header,
+body.rtl .accordion-header {
+  text-align: right;
+}
+
+html[dir="rtl"] .auth-card,
+body.rtl .auth-card {
+  text-align: right;
+}
+
+html[dir="rtl"] .governance-table th,
+html[dir="rtl"] .governance-table td,
+body.rtl .governance-table th,
+body.rtl .governance-table td {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   3. MARGINS, PADDING & FLOATS MIRRORING
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .avatar-circle,
+body.rtl .avatar-circle {
+  margin-left: 0;
+  margin-right: -10px;
+}
+
+html[dir="rtl"] .avatar-circle:first-child,
+body.rtl .avatar-circle:first-child {
+  margin-right: 0;
+}
+
+html[dir="rtl"] .hero-floating-badge,
+body.rtl .hero-floating-badge {
+  left: auto;
+  right: -24px;
+}
+
+html[dir="rtl"] .footer-links a:hover,
+body.rtl .footer-links a:hover {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+html[dir="rtl"] .nav-link.active::after,
+body.rtl .nav-link.active::after {
+  left: auto;
+  right: 0;
+}

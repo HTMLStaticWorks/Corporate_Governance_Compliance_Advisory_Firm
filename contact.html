@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidential Consultation — Veritas & Crown</title>
+  <meta name="description" content="Initiate a confidential preliminary inquiry or retain independent board advisory counsel with Veritas & Crown Governance Partners.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Veritas and Crown Homepage">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" id="desktopThemeToggle" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-nav">
+      <li><a href="index.html" class="drawer-link"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="home2.html" class="drawer-link"><i class="ph ph-presentation-chart"></i> Home 2</a></li>
+      <li><a href="services.html" class="drawer-link"><i class="ph ph-briefcase"></i> Services</a></li>
+      <li><a href="about.html" class="drawer-link"><i class="ph ph-buildings"></i> About</a></li>
+      <li><a href="blog.html" class="drawer-link"><i class="ph ph-article"></i> Blog</a></li>
+      <li><a href="contact.html" class="drawer-link active"><i class="ph ph-envelope"></i> Contact</a></li>
+      <li><a href="dashboard.html" class="drawer-link"><i class="ph ph-gauge"></i> Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <div class="drawer-controls-row">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- PAGE HERO -->
+  <section class="hero-section" id="contact-hero">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: var(--space-xl);">
+        <span class="section-tag"><i class="ph ph-lock-key"></i> Strictly Privileged & Confidential</span>
+        <h1 class="section-title">Retain Independent Board Counsel</h1>
+        <p class="section-desc">
+          Engage directly with Senior Managing Partners for board evaluations, crisis special committees, SEC disclosure pre-clearance, and regulatory defense.
+        </p>
+      </div>
+
+      <div class="grid grid-2" style="align-items: flex-start;">
+        
+        <!-- Consultation Form Left -->
+        <div class="card" style="padding: clamp(24px, 4vw, 42px);">
+          <h3 style="margin-bottom: var(--space-xs);"><i class="ph ph-shield-check" style="color: var(--color-accent);"></i> Fiduciary Inquiry Form</h3>
+          <p style="font-size: 0.92rem; margin-bottom: var(--space-lg);">
+            All communications are protected under formal attorney-client and consulting work product guidelines.
+          </p>
+
+          <form data-validate id="boardConsultationForm">
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Authorized Officer Name</label>
+                <input type="text" id="officerName" class="form-input" placeholder="e.g. Eleanor Vance" required>
+                <div class="field-error" id="officerNameError">Please enter your authorized name.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Officer Title / Role</label>
+                <select id="officerRole" class="form-select" required>
+                  <option value="">Select Board Capacity...</option>
+                  <option value="Lead Independent Director">Lead Independent Director</option>
+                  <option value="Audit Committee Chair">Audit Committee Chair</option>
+                  <option value="Nominating / Governance Chair">Nominating / Governance Chair</option>
+                  <option value="Board Chair">Board Chair</option>
+                  <option value="Chief Legal Officer / General Counsel">Chief Legal Officer / General Counsel</option>
+                  <option value="Corporate Secretary">Corporate Secretary</option>
+                </select>
+                <div class="field-error" id="officerRoleError">Please select your board role.</div>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Corporate Legal Entity</label>
+                <input type="text" id="entityName" class="form-input" placeholder="e.g. Apex Global Holdings Inc." required>
+                <div class="field-error" id="entityNameError">Please enter your entity name.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Corporate Work Email</label>
+                <input type="email" id="corporateEmail" class="form-input" placeholder="name@enterprise.com" required>
+                <div class="field-error" id="corporateEmailError">Please enter a valid corporate email.</div>
+              </div>
+            </div>
+
+            <div class="grid grid-2">
+              <div class="form-group">
+                <label class="form-label">Primary Advisory Discipline</label>
+                <select id="advisoryArea" class="form-select" required>
+                  <option value="">Select Advisory Area...</option>
+                  <option value="Annual Board & Committee Evaluation">Annual Board & Committee Evaluation</option>
+                  <option value="SEC & Regulatory Defense">SEC & Regulatory Defense</option>
+                  <option value="ESG & Climate Assurance">ESG & Climate Assurance</option>
+                  <option value="SOX 404 & Internal Controls">SOX 404 & Internal Controls</option>
+                  <option value="Executive Compensation & Clawbacks">Executive Compensation & Clawbacks</option>
+                  <option value="AI & Cyber Fiduciary Oversight">AI & Cyber Fiduciary Oversight</option>
+                  <option value="Crisis Special Committee Mobilization">Crisis Special Committee Mobilization</option>
+                </select>
+                <div class="field-error" id="advisoryAreaError">Please select an advisory discipline.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Listing Exchange / Jurisdiction</label>
+                <select id="exchangeListing" class="form-select" required>
+                  <option value="">Select Primary Market...</option>
+                  <option value="NYSE Listed">NYSE Listed</option>
+                  <option value="Nasdaq Listed">Nasdaq Listed</option>
+                  <option value="LSE / London Listed">LSE / London Listed</option>
+                  <option value="SIX Swiss Exchange">SIX Swiss Exchange</option>
+                  <option value="SGX Singapore">SGX Singapore</option>
+                  <option value="Pre-IPO / Private Unicorn">Pre-IPO / Private Unicorn</option>
+                </select>
+                <div class="field-error" id="exchangeListingError">Please select your primary market.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Summary of Governance Matter</label>
+              <textarea id="inquiryScope" class="form-textarea" rows="4" placeholder="Describe the scope of advisory required, upcoming proxy timelines, or regulatory inquiries..." required></textarea>
+              <div class="field-error" id="inquiryScopeError">Please describe the advisory scope.</div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: var(--space-lg);">
+              <label class="form-check">
+                <input type="checkbox" id="ndaCheck">
+                <span>Please execute our standard bilateral Confidential Fiduciary Non-Disclosure Agreement (NDA) prior to formal introductory conference.</span>
+              </label>
+            </div>
+
+            <div class="form-alert"></div>
+
+            <button type="submit" class="btn btn-accent" style="width: 100%;">
+              <i class="ph ph-lock-key"></i> Transmit Privileged Inquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Hotlines & Office Details Right -->
+        <div>
+          
+          <!-- Emergency Hotline Card -->
+          <div class="card" style="margin-bottom: var(--space-xl); border-color: rgba(197, 155, 39, 0.4); background: linear-gradient(135deg, rgba(12, 26, 46, 0.03), rgba(197, 155, 39, 0.08));">
+            <div style="display: flex; gap: 14px; align-items: center; margin-bottom: var(--space-sm);">
+              <div class="card-icon" style="margin-bottom: 0; background-color: var(--color-accent); color: #0c1a2e;"><i class="ph ph-phone-call"></i></div>
+              <div>
+                <h4 style="margin-bottom: 2px;">24/7 Special Committee Emergency Hotline</h4>
+                <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Direct partner routing for regulatory subpoenas & material breaches</span>
+              </div>
+            </div>
+            <div style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: var(--weight-h2); color: var(--color-primary); margin: var(--space-sm) 0;">
+              +1 (800) 582-7489 <span style="font-size: 0.85rem; font-family: var(--font-body); color: var(--color-text-muted);">(Toll-Free U.S. / Canada)</span>
+            </div>
+            <div style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6;">
+              International Direct: <strong>+44 20 7946 0912</strong> (London) • <strong>+41 44 215 8890</strong> (Zurich)
+            </div>
+          </div>
+
+          <!-- Encrypted PGP Vault Guidance -->
+          <div class="card" style="margin-bottom: var(--space-xl);">
+            <h4 style="margin-bottom: var(--space-sm);"><i class="ph ph-shield-check" style="color: var(--color-accent);"></i> Encrypted Communications</h4>
+            <p style="font-size: 0.92rem; line-height: 1.6;">
+              For highly sensitive whistleblower disclosures or unannounced DOJ / SEC subpoenas, general counsels may send PGP-encrypted dossiers directly to our air-gapped intake address:
+            </p>
+            <div style="background: var(--color-surface-soft); padding: 10px 14px; border-radius: var(--radius-sm); font-family: monospace; font-size: 0.88rem; color: var(--color-secondary); word-break: break-all; margin-bottom: var(--space-sm);">
+              fiduciary-vault@veritas-crown.com
+            </div>
+            <span style="font-size: 0.8rem; color: var(--color-text-subtle);">
+              PGP Fingerprint: 4E91 B7F2 830A 119C D458 992E FC01 3349 81AE 720D
+            </span>
+          </div>
+
+          <!-- Office Directory Preview -->
+          <div class="card">
+            <h4 style="margin-bottom: var(--space-md);"><i class="ph ph-buildings" style="color: var(--color-accent);"></i> Global Fiduciary Practice Hubs</h4>
+            <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.92rem;">
+              <div>
+                <strong>New York (World Headquarters)</strong>
+                <div style="color: var(--color-text-muted);">450 Lexington Avenue, 38th Floor, New York, NY 10017</div>
+              </div>
+              <div>
+                <strong>Washington D.C. (Regulatory Enforcement Practice)</strong>
+                <div style="color: var(--color-text-muted);">1775 Pennsylvania Avenue NW, Suite 1000, Washington, DC 20006</div>
+              </div>
+              <div>
+                <strong>London (European Dual-Listed Practice)</strong>
+                <div style="color: var(--color-text-muted);">1 Curzon Street, Mayfair, London W1J 5HD, United Kingdom</div>
+              </div>
+              <div>
+                <strong>Zurich (Continental ESG & Financial Governance)</strong>
+                <div style="color: var(--color-text-muted);">Bahnhofstrasse 28, 8001 Zürich, Switzerland</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL OFFICE DIRECTORY SECTION -->
+  <section class="section section-alt" id="locations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="ph ph-globe"></i> Global Presence</span>
+        <h2 class="section-title">Institutional Advisory Jurisdictions</h2>
+        <p class="section-desc">
+          Our Senior Partners maintain active admissions, bar certifications, and regulatory liaisons across principal financial capitals.
+        </p>
+      </div>
+
+      <div class="grid grid-3">
+        
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
+            <h3 style="margin-bottom: 0;">New York</h3>
+            <span class="badge badge-low">Global HQ</span>
+          </div>
+          <p style="font-size: 0.9rem;">NYSE, Nasdaq & Delaware Court of Chancery advisory practice.</p>
+          <div style="font-size: 0.85rem; color: var(--color-text-subtle); margin-top: auto; padding-top: var(--space-sm); border-top: 1px solid var(--color-border);">
+            Lead Partner: Arthur Pendelton, Esq. • Timezone: EST (UTC-5)
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
+            <h3 style="margin-bottom: 0;">Washington D.C.</h3>
+            <span class="badge badge-medium">Regulatory Center</span>
+          </div>
+          <p style="font-size: 0.9rem;">Direct liaison with SEC, DOJ, FTC, and Congressional oversight committees.</p>
+          <div style="font-size: 0.85rem; color: var(--color-text-subtle); margin-top: auto; padding-top: var(--space-sm); border-top: 1px solid var(--color-border);">
+            Lead Partner: Dr. Evelyn Mercer, CPA • Timezone: EST (UTC-5)
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-sm);">
+            <h3 style="margin-bottom: 0;">London</h3>
+            <span class="badge badge-low">EMEA Hub</span>
+          </div>
+          <p style="font-size: 0.9rem;">UK Corporate Governance Code, FRC and London Stock Exchange cross-border practice.</p>
+          <div style="font-size: 0.85rem; color: var(--color-text-subtle); margin-top: auto; padding-top: var(--space-sm); border-top: 1px solid var(--color-border);">
+            Lead Partner: Hon. Rosalind Sterling • Timezone: GMT (UTC+0)
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="color: #ffffff; margin-bottom: var(--space-md);">
+            <span class="logo-mark"><i class="ph ph-scales"></i></span>
+            <span>Veritas & Crown</span>
+          </a>
+          <p style="margin-bottom: var(--space-md);">
+            Premier international corporate governance, board advisory, regulatory compliance defense, and fiduciary oversight counsel.
+          </p>
+          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">
+            Offices: New York • London • Singapore • Zurich • Washington D.C.
+          </div>
+        </div>
+
+        <div>
+          <h4>Advisory Practices</h4>
+          <div class="footer-links">
+            <a href="services.html#board-composition">Board Composition</a>
+            <a href="services.html#regulatory-compliance">SEC & DOJ Defense</a>
+            <a href="services.html#esg-oversight">ESG Governance</a>
+            <a href="services.html#erm-internal-controls">ERM & SOX 404</a>
+            <a href="services.html#exec-comp-ethics">Executive Ethics</a>
+            <a href="services.html#ai-cyber-governance">AI & Cyber Oversight</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Firm & Intelligence</h4>
+          <div class="footer-links">
+            <a href="about.html">Institutional Heritage</a>
+            <a href="about.html#leadership">Senior Advisory Fellows</a>
+            <a href="blog.html">Governance Intelligence Hub</a>
+            <a href="blog-single.html">SEC AI Whitepaper</a>
+            <a href="coming-soon.html">AI Governance Engine</a>
+            <a href="dashboard.html">Client Portal</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Board Engagement</h4>
+          <div class="footer-links">
+            <a href="contact.html">Confidential Consultation</a>
+            <a href="contact.html#locations">Global Office Directory</a>
+            <a href="home2.html#diagnostic">Governance Diagnostic</a>
+            <a href="login.html">Client Login</a>
+            <a href="register.html">Entity Onboarding</a>
+            <a href="404.html">Security Docket 404</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Veritas & Crown Governance Partners LLC. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="about.html#charter" style="color: inherit;">Global Ethics Charter</a>
+          <a href="about.html" style="color: inherit;">Confidentiality Standard</a>
+          <a href="contact.html" style="color: inherit;">Encrypted Communications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

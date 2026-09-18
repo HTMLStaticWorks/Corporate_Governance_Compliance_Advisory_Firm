@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entity Onboarding & Portal Registration — Veritas & Crown</title>
+  <meta name="description" content="Register your corporate entity for access to the Veritas & Crown Governance & Compliance Portal.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="auth-page">
+
+  <!-- Centered Institutional Registration Card -->
+  <main class="auth-card" style="max-width: 520px;">
+    <div class="auth-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+      <h2 style="margin-top: 8px; margin-bottom: 4px; font-size: 1.8rem;">Entity Portal Onboarding</h2>
+      <p style="font-size: 0.9rem; color: var(--color-text-subtle);">
+        Establish cryptographic portal credentials for your board of directors
+      </p>
+    </div>
+
+    <!-- Registration Form -->
+    <form data-validate id="registerForm">
+      <div class="grid grid-2">
+        <div class="form-group">
+          <label class="form-label" for="regEntity">Legal Entity Name</label>
+          <input type="text" id="regEntity" name="entity" class="form-input" placeholder="e.g. Apex Global Corp" required>
+          <div class="field-error" id="regEntityError">Corporate entity name is required.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regOfficer">Authorized Officer</label>
+          <input type="text" id="regOfficer" name="officer" class="form-input" placeholder="e.g. Eleanor Vance" required>
+          <div class="field-error" id="regOfficerError">Authorized officer name is required.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regEmail">Corporate Work Email</label>
+        <input type="email" id="regEmail" name="email" class="form-input" placeholder="director@enterprise.com" required autocomplete="username">
+        <div class="field-error" id="regEmailError">Please enter a valid corporate email.</div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Security Passphrase</label>
+          <input type="password" id="regPassword" name="password" class="form-input" placeholder="Min. 8 characters" required autocomplete="new-password">
+          <div class="field-error" id="regPasswordError">Must be at least 8 characters.</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="confirmPassword">Confirm Passphrase</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Re-enter passphrase" required autocomplete="new-password">
+          <div class="field-error" id="confirmPasswordError">Passphrases must match.</div>
+        </div>
+      </div>
+
+      <!-- Mandatory Terms & Conditions Checkbox (Step 12 & QA Requirement) -->
+      <div class="form-group" style="margin-bottom: var(--space-lg);">
+        <label class="form-check">
+          <input type="checkbox" id="termsCheck" name="terms" required>
+          <span>I certify that I am an authorized corporate officer and agree to the <a href="about.html#charter" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Fiduciary Terms & Conditions</a> and strict client confidentiality safeguards.</span>
+        </label>
+        <div class="field-error" id="termsCheckError">You must accept the Terms & Conditions to proceed.</div>
+      </div>
+
+      <div class="form-alert"></div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: var(--space-md);">
+        <i class="ph ph-shield-plus"></i> Submit Onboarding Application
+      </button>
+    </form>
+
+    <!-- SSO Alternative -->
+    <div class="auth-divider">
+      <span>Or connect via Corporate Identity</span>
+    </div>
+
+    <div class="sso-buttons">
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-windows-logo"></i> Azure AD / Entra
+      </button>
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-shield-check"></i> Okta Federation
+      </button>
+    </div>
+
+    <!-- Login Link Footer -->
+    <div style="text-align: center; margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--color-border); font-size: 0.9rem; color: var(--color-text-muted);">
+      Already have client credentials?
+      <a href="login.html" style="color: var(--color-accent); font-weight: var(--weight-btn); margin-left: 4px;">Sign In to Portal</a>
+    </div>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

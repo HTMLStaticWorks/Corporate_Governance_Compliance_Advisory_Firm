@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEC AI Governance & Cyber Oversight Whitepaper — Veritas & Crown</title>
+  <meta name="description" content="A comprehensive fiduciary playbook for Audit and Technology Committees on navigating SEC Item 106 disclosure requirements and AI governance standards.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Veritas and Crown Homepage">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" id="desktopThemeToggle" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-nav">
+      <li><a href="index.html" class="drawer-link"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="home2.html" class="drawer-link"><i class="ph ph-presentation-chart"></i> Home 2</a></li>
+      <li><a href="services.html" class="drawer-link"><i class="ph ph-briefcase"></i> Services</a></li>
+      <li><a href="about.html" class="drawer-link"><i class="ph ph-buildings"></i> About</a></li>
+      <li><a href="blog.html" class="drawer-link active"><i class="ph ph-article"></i> Blog</a></li>
+      <li><a href="contact.html" class="drawer-link"><i class="ph ph-envelope"></i> Contact</a></li>
+      <li><a href="dashboard.html" class="drawer-link"><i class="ph ph-gauge"></i> Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <div class="drawer-controls-row">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- WHITEPAPER ARTICLE HEADER -->
+  <article class="section" style="padding-top: clamp(40px, 6vw, 70px);">
+    <div class="container" style="max-width: 920px;">
+      
+      <div style="margin-bottom: var(--space-lg);">
+        <a href="blog.html" style="display: inline-flex; align-items: center; gap: 8px; color: var(--color-accent); font-weight: var(--weight-btn); font-size: 0.95rem; margin-bottom: var(--space-md);">
+          <i class="ph ph-arrow-left"></i> Back to Intelligence Hub
+        </a>
+        <div style="display: flex; gap: 10px; align-items: center; margin-bottom: var(--space-sm); flex-wrap: wrap;">
+          <span class="badge badge-medium">Institutional Whitepaper</span>
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">14 Min Read • Published September 2026</span>
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Docket Ref: VCG-WP-2026-09</span>
+        </div>
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.18; margin-bottom: var(--space-md);">
+          Navigating SEC AI Governance & Boardroom Cyber Oversight Standards for 2026
+        </h1>
+        <p style="font-size: var(--size-lead); line-height: 1.7; color: var(--color-text-muted);">
+          A definitive fiduciary analysis for public board audit committees and corporate secretaries regarding mandatory cyber incident materiality determinations, generative algorithm compliance, and Delaware Caremark liability shield protocols.
+        </p>
+      </div>
+
+      <!-- Author Metadata Strip -->
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); padding: var(--space-md) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); margin-bottom: var(--space-2xl);">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div class="avatar-circle" style="width: 48px; height: 48px; background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80');"></div>
+          <div>
+            <div style="font-weight: var(--weight-label); color: var(--color-text);">Arthur Pendelton, Esq.</div>
+            <div style="font-size: 0.82rem; color: var(--color-text-subtle);">Senior Managing Partner • Former SEC Enforcement Branch Chief</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.85rem;" onclick="navigator.clipboard.writeText(window.location.href); alert('Whitepaper citation link copied to clipboard.');">
+            <i class="ph ph-copy"></i> Copy Citation
+          </button>
+          <a href="contact.html" class="btn btn-primary" style="padding: 8px 14px; font-size: 0.85rem;">
+            <i class="ph ph-lock-key"></i> Retain Special Counsel
+          </a>
+        </div>
+      </div>
+
+      <!-- Table of Contents Card -->
+      <div class="card" style="margin-bottom: var(--space-2xl); padding: var(--space-lg); background-color: var(--color-surface-soft);">
+        <h4 style="margin-bottom: var(--space-sm);"><i class="ph ph-list-numbers" style="color: var(--color-accent);"></i> Contents of this Fiduciary Analysis</h4>
+        <ul style="display: flex; flex-direction: column; gap: 8px; font-size: 0.95rem;">
+          <li><a href="#sec-rule-106" style="color: var(--color-primary); font-weight: var(--weight-btn);">1. SEC Item 106 & Form 8-K 4-Day Cyber Trigger Realities</a></li>
+          <li><a href="#ai-liability" style="color: var(--color-primary); font-weight: var(--weight-btn);">2. Generative Enterprise AI: Intellectual Property & Fiduciary Exposure</a></li>
+          <li><a href="#boardroom-action-checklist" style="color: var(--color-primary); font-weight: var(--weight-btn);">3. Boardroom 5-Point Oversight & Immunity Checklist</a></li>
+          <li><a href="#citations" style="color: var(--color-primary); font-weight: var(--weight-btn);">4. Judicial References & Statutory Citations</a></li>
+        </ul>
+      </div>
+
+      <!-- Section 1 -->
+      <section id="sec-rule-106" style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-md);">1. SEC Item 106 & Form 8-K 4-Day Cyber Trigger Realities</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8;">
+          When the Securities and Exchange Commission finalized its rules on Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure, corporate boards entered a dramatically transformed legal landscape. No longer can public companies treat cyber intrusions as mere IT infrastructure incidents handled discreetly by network security teams.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8;">
+          Under amended Form 8-K Item 1.05, a registrant must disclose any cybersecurity incident within <strong>four business days</strong> after determining that the incident is material. The critical statutory trap for boards lies in the phrase: <em>"without unreasonable delay."</em> SEC enforcement actions in 2025 and 2026 demonstrate that regulators actively scrutinize the timeline between discovery and formal materiality determination.
+        </p>
+        <div class="card" style="border-left: 4px solid var(--color-accent); margin: var(--space-lg) 0; padding: var(--space-lg);">
+          <strong style="color: var(--color-primary); display: block; margin-bottom: 6px;">Fiduciary Note from SEC Enforcement Precedent:</strong>
+          <p style="margin-bottom: 0; font-size: 0.95rem;">
+            Delaying a formal materiality determination while internal investigators deliberate does not stop the SEC clock if executive leadership was already aware of quantitative or qualitative damage to core intellectual property, client funds, or operational continuity.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="ai-liability" style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-md);">2. Generative Enterprise AI: Intellectual Property & Fiduciary Exposure</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8;">
+          The unchecked adoption of Large Language Models (LLMs) and autonomous generative agents within enterprise workflows creates immediate board oversight liability under the Delaware Court of Chancery’s landmark <em>Marchand v. Barnhill</em> and <em>Caremark</em> jurisprudence.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.8;">
+          When enterprise codebases or confidential consumer financial data are ingested into third-party commercial LLM models without cryptographic quarantine, directors face personal liability for failure to maintain reporting and compliance systems over mission-critical regulatory assets.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="boardroom-action-checklist" style="margin-bottom: var(--space-2xl);">
+        <h2 style="margin-bottom: var(--space-md);">3. Boardroom 5-Point Oversight & Immunity Checklist</h2>
+        <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--space-lg);">
+          Veritas & Crown recommends that public and pre-IPO boards immediately execute the following five procedural safeguards during their next quarterly executive session:
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: var(--space-md);">
+          <div class="card" style="padding: var(--space-md);">
+            <h4 style="margin-bottom: 6px;"><i class="ph ph-number-circle-one" style="color: var(--color-accent);"></i> Establish Cyber Materiality Escalation Protocols</h4>
+            <p style="margin-bottom: 0; font-size: 0.92rem;">Empower an ad-hoc Incident Disclosure Committee (comprising the Audit Chair, Chief Legal Officer, and CISO) with sole authority to convene emergency materiality reviews within 12 hours of breach detection.</p>
+          </div>
+          <div class="card" style="padding: var(--space-md);">
+            <h4 style="margin-bottom: 6px;"><i class="ph ph-number-circle-two" style="color: var(--color-accent);"></i> Document Board Cyber Competency in Proxy Statements</h4>
+            <p style="margin-bottom: 0; font-size: 0.92rem;">Audit and publicly articulate the specific cyber expertise of designated independent directors in the annual DEF 14A proxy filing, supported by retained third-party advisory counsel.</p>
+          </div>
+          <div class="card" style="padding: var(--space-md);">
+            <h4 style="margin-bottom: 6px;"><i class="ph ph-number-circle-three" style="color: var(--color-accent);"></i> Conduct Annual Ransomware War Games</h4>
+            <p style="margin-bottom: 0; font-size: 0.92rem;">Simulate full board crisis response under severe extortion conditions, including OFAC sanctions verification prior to any hypothetical cryptocurrency ransom deliberations.</p>
+          </div>
+          <div class="card" style="padding: var(--space-md);">
+            <h4 style="margin-bottom: 6px;"><i class="ph ph-number-circle-four" style="color: var(--color-accent);"></i> Enact Enterprise Generative AI Model Governance Charters</h4>
+            <p style="margin-bottom: 0; font-size: 0.92rem;">Prohibit unapproved third-party model deployments and establish an auditable register of all algorithmic tools utilized in SEC-disclosed financial forecasting or customer credit evaluations.</p>
+          </div>
+          <div class="card" style="padding: var(--space-md);">
+            <h4 style="margin-bottom: 6px;"><i class="ph ph-number-circle-five" style="color: var(--color-accent);"></i> Maintain Air-Gapped Deliberative Minutes</h4>
+            <p style="margin-bottom: 0; font-size: 0.92rem;">Shield all board deliberative session records regarding vulnerability assessments under strict attorney-client privilege using cryptographically isolated corporate vaults.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="citations" style="margin-bottom: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--color-border);">
+        <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-scales" style="color: var(--color-accent);"></i> 4. Judicial References & Statutory Citations</h3>
+        <ol style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem; color: var(--color-text-subtle); padding-left: 20px; list-style: decimal;">
+          <li>U.S. Securities and Exchange Commission, Release Nos. 33-11216; 34-97964; <em>Cybersecurity Risk Management, Strategy, Governance, and Incident Disclosure</em> (17 CFR Parts 229, 232, 239, 240, and 249).</li>
+          <li><em>In re Caremark International Inc. Derivative Litigation</em>, 698 A.2d 959 (Del. Ch. 1996) (Duty of oversight standard).</li>
+          <li><em>Marchand v. Barnhill</em>, 212 A.3d 805 (Del. 2019) (Board failure to implement reporting system for mission-critical risk constitutes breach of loyalty).</li>
+          <li>Department of Justice Criminal Division, <em>Evaluation of Corporate Compliance Programs</em> (Updated 2024–2026).</li>
+        </ol>
+      </section>
+
+      <!-- Reader Feedback Form -->
+      <section class="card" style="padding: var(--space-xl); margin-bottom: var(--space-2xl);">
+        <h3 style="margin-bottom: var(--space-sm);"><i class="ph ph-chat-teardrop-text" style="color: var(--color-accent);"></i> Fiduciary Discussion & Inquiry</h3>
+        <p style="font-size: 0.92rem; margin-bottom: var(--space-md);">
+          General Counsels and Audit Committee Members may submit confidential inquiries regarding this analysis directly to our Senior Managing Partners.
+        </p>
+
+        <form data-validate>
+          <div class="grid grid-2">
+            <div class="form-group">
+              <label class="form-label">Full Name & Title</label>
+              <input type="text" class="form-input" placeholder="e.g. Audit Committee Chair" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Corporate Email</label>
+              <input type="email" class="form-input" placeholder="name@enterprise.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Inquiry / Deliberation Topic</label>
+            <textarea class="form-textarea" rows="4" placeholder="Briefly describe your board's technical question or oversight scenario..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent"><i class="ph ph-paper-plane-tilt"></i> Submit Confidential Inquiry</button>
+          <div class="form-alert success" style="margin-top: 14px;"></div>
+        </form>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="color: #ffffff; margin-bottom: var(--space-md);">
+            <span class="logo-mark"><i class="ph ph-scales"></i></span>
+            <span>Veritas & Crown</span>
+          </a>
+          <p style="margin-bottom: var(--space-md);">
+            Premier international corporate governance, board advisory, regulatory compliance defense, and fiduciary oversight counsel.
+          </p>
+          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">
+            Offices: New York • London • Singapore • Zurich • Washington D.C.
+          </div>
+        </div>
+
+        <div>
+          <h4>Advisory Practices</h4>
+          <div class="footer-links">
+            <a href="services.html#board-composition">Board Composition</a>
+            <a href="services.html#regulatory-compliance">SEC & DOJ Defense</a>
+            <a href="services.html#esg-oversight">ESG Governance</a>
+            <a href="services.html#erm-internal-controls">ERM & SOX 404</a>
+            <a href="services.html#exec-comp-ethics">Executive Ethics</a>
+            <a href="services.html#ai-cyber-governance">AI & Cyber Oversight</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Firm & Intelligence</h4>
+          <div class="footer-links">
+            <a href="about.html">Institutional Heritage</a>
+            <a href="about.html#leadership">Senior Advisory Fellows</a>
+            <a href="blog.html">Governance Intelligence Hub</a>
+            <a href="blog-single.html">SEC AI Whitepaper</a>
+            <a href="coming-soon.html">AI Governance Engine</a>
+            <a href="dashboard.html">Client Portal</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Board Engagement</h4>
+          <div class="footer-links">
+            <a href="contact.html">Confidential Consultation</a>
+            <a href="contact.html#locations">Global Office Directory</a>
+            <a href="home2.html#diagnostic">Governance Diagnostic</a>
+            <a href="login.html">Client Login</a>
+            <a href="register.html">Entity Onboarding</a>
+            <a href="404.html">Security Docket 404</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Veritas & Crown Governance Partners LLC. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="about.html#charter" style="color: inherit;">Global Ethics Charter</a>
+          <a href="about.html" style="color: inherit;">Confidentiality Standard</a>
+          <a href="contact.html" style="color: inherit;">Encrypted Communications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

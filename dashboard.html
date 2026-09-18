@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Governance & Compliance Portal — Veritas & Crown</title>
+  <meta name="description" content="Institutional client portal for monitoring public board compliance scores, SOX 404 remediation, regulatory filing deadlines, and encrypted board records.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c59b27'><path d='M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.54-3.14 8.79-7 9.9-3.86-1.11-7-5.36-7-9.9V6.3l7-3.12zM11 7h2v6h-2zm0 8h2v2h-2z'/></svg>">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- SITE HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="logo" aria-label="Veritas and Crown Homepage">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="home2.html" class="nav-link">Home 2</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+          <li><a href="dashboard.html" class="nav-link active">Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" id="desktopThemeToggle" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button type="button" class="hamburger-btn" id="hamburgerBtn" aria-label="Open mobile navigation menu">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="ph ph-scales"></i></span>
+        <span>Veritas & Crown</span>
+      </a>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+        <i class="ph ph-x"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-nav">
+      <li><a href="index.html" class="drawer-link"><i class="ph ph-house"></i> Home</a></li>
+      <li><a href="home2.html" class="drawer-link"><i class="ph ph-presentation-chart"></i> Home 2</a></li>
+      <li><a href="services.html" class="drawer-link"><i class="ph ph-briefcase"></i> Services</a></li>
+      <li><a href="about.html" class="drawer-link"><i class="ph ph-buildings"></i> About</a></li>
+      <li><a href="blog.html" class="drawer-link"><i class="ph ph-article"></i> Blog</a></li>
+      <li><a href="contact.html" class="drawer-link"><i class="ph ph-envelope"></i> Contact</a></li>
+      <li><a href="dashboard.html" class="drawer-link active"><i class="ph ph-gauge"></i> Dashboard</a></li>
+    </ul>
+
+    <div class="drawer-actions">
+      <div class="drawer-controls-row">
+        <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle RTL layout" title="Toggle RTL layout">
+          <i class="ph ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+          <i class="ph ph-moon"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <!-- DASHBOARD WRAPPER -->
+  <main class="dashboard-wrapper">
+    <div class="container">
+      
+      <!-- Top Client Header Bar -->
+      <div class="dashboard-header-bar">
+        <div>
+          <div class="client-badge-row">
+            <h1 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 0;">Institutional Client Portal</h1>
+            <span class="badge badge-low"><i class="ph ph-shield-check"></i> Enterprise Active Retainer</span>
+          </div>
+          <p style="font-size: 0.95rem; color: var(--color-text-subtle); margin-top: 4px;">
+            Client Entity: <strong>Apex Global Enterprise Ltd (NYSE: APEX)</strong> • Lead Partner: <strong>Arthur Pendelton, Esq.</strong>
+          </p>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+          <a href="contact.html" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.9rem;">
+            <i class="ph ph-phone"></i> Emergency Partner Hotline
+          </a>
+          <button type="button" class="btn btn-accent" style="padding: 10px 18px; font-size: 0.9rem;" onclick="alert('Exporting Q3 Comprehensive Fiduciary Audit Report (PDF)...');">
+            <i class="ph ph-download-simple"></i> Export Board Dossier
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Fiduciary Stats Grid -->
+      <div class="dash-stats-grid">
+        <div class="stat-box">
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Governance Health Score</span>
+          <div class="stat-box-num" id="dashComplianceScore">94%</div>
+          <span style="font-size: 0.8rem; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
+            <i class="ph ph-trend-up"></i> +4.2% since Q2 Audit
+          </span>
+        </div>
+
+        <div class="stat-box">
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">SOX 404 Control Health</span>
+          <div class="stat-box-num" style="color: var(--color-success);">Cleared</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle);">0 Material Weaknesses Identified</span>
+        </div>
+
+        <div class="stat-box">
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next SEC Regulatory Deadline</span>
+          <div class="stat-box-num" style="font-size: 1.6rem; color: var(--color-primary);">18 Days</div>
+          <span style="font-size: 0.8rem; color: var(--color-warning);">Form 10-Q Pre-Filing Review</span>
+        </div>
+
+        <div class="stat-box">
+          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next Board Executive Session</span>
+          <div class="stat-box-num" style="font-size: 1.6rem; color: var(--color-primary);">Oct 14</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Audit & Governance Committees</span>
+        </div>
+      </div>
+
+      <!-- Dashboard Interactive Tabs Navigation -->
+      <div class="tabs-nav" style="justify-content: flex-start; margin-bottom: var(--space-lg);">
+        <button type="button" class="tab-btn dash-nav-btn active" data-target="panelOverview">
+          <i class="ph ph-squares-four"></i> Overview & Filing Calendar
+        </button>
+        <button type="button" class="tab-btn dash-nav-btn" data-target="panelActions">
+          <i class="ph ph-check-square"></i> Committee Action Items
+        </button>
+        <button type="button" class="tab-btn dash-nav-btn" data-target="panelLogFinding">
+          <i class="ph ph-plus-circle"></i> Log Compliance Observation
+        </button>
+        <button type="button" class="tab-btn dash-nav-btn" data-target="panelVault">
+          <i class="ph ph-folder-lock"></i> Cryptographic Document Vault
+        </button>
+      </div>
+
+      <!-- Download Toast Notification -->
+      <div id="vaultDownloadToast" class="form-alert success" style="display: none; margin-bottom: var(--space-md);"></div>
+
+      <!-- TAB PANEL 1: OVERVIEW & FILING CALENDAR -->
+      <div class="tab-panel dash-panel active" id="panelOverview">
+        <div class="grid grid-2">
+          
+          <!-- Upcoming Filings Table -->
+          <div class="card">
+            <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-calendar-check" style="color: var(--color-accent);"></i> 2026 Statutory Filing Deadlines</h3>
+            <div class="table-responsive">
+              <table class="governance-table">
+                <thead>
+                  <tr>
+                    <th>Filing / Matter</th>
+                    <th>Regulator</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Form 10-Q (Q3)</strong></td>
+                    <td>U.S. SEC</td>
+                    <td>Oct 15, 2026</td>
+                    <td><span class="badge badge-low">Draft Cleared</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Item 106 Cyber Assessment</strong></td>
+                    <td>Audit Committee</td>
+                    <td>Nov 01, 2026</td>
+                    <td><span class="badge badge-medium">Under Review</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>DEF 14A Proxy Peer Review</strong></td>
+                    <td>Comp Committee</td>
+                    <td>Dec 10, 2026</td>
+                    <td><span class="badge badge-low">On Schedule</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EU CSRD Double Materiality</strong></td>
+                    <td>ESMA / EU</td>
+                    <td>Jan 15, 2027</td>
+                    <td><span class="badge badge-high">Data Gap Audit</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Active Practice Advisory Updates -->
+          <div class="card">
+            <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-bell-ringing" style="color: var(--color-accent);"></i> Lead Partner Advisories</h3>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-accent);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                  <strong style="color: var(--color-primary);">Arthur Pendelton, Senior Partner</strong>
+                  <span style="color: var(--color-text-subtle);">Today, 09:30 EST</span>
+                </div>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">
+                  "Completed pre-clearance on the Q3 Form 10-Q executive clawback footnote disclosures. All provisions now align with SEC Rule 10D-1 standards."
+                </p>
+              </div>
+
+              <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-secondary);">
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
+                  <strong style="color: var(--color-primary);">Dr. Evelyn Mercer, Audit Practice</strong>
+                  <span style="color: var(--color-text-subtle);">Yesterday, 16:15 EST</span>
+                </div>
+                <p style="font-size: 0.9rem; margin-bottom: 0;">
+                  "Met in executive session with the external auditor. No scope limitations or unresolved accounting disagreements were identified."
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB PANEL 2: COMMITTEE ACTION ITEMS -->
+      <div class="tab-panel dash-panel" id="panelActions">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h3 style="margin-bottom: 2px;"><i class="ph ph-list-checks" style="color: var(--color-accent);"></i> Boardroom Action Items & Remediations</h3>
+              <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Check off resolved items to dynamically update your governance health score</span>
+            </div>
+            <span class="badge badge-low"><i class="ph ph-arrows-clockwise"></i> Live Interactive Sync</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="governance-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">Done</th>
+                  <th>Action Item & Docket Ref</th>
+                  <th>Regulation</th>
+                  <th>Assigned Committee</th>
+                  <th>Severity</th>
+                  <th>Target Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="auditFindingsTableBody">
+                <tr>
+                  <td><input type="checkbox" class="action-item-checkbox" checked style="width: 18px; height: 18px;"></td>
+                  <td><strong>Adopt Revised Mandatory Clawback Policy</strong><div style="font-size: 0.8rem; color: var(--color-text-subtle);">Ref: VCG-2026-8812</div></td>
+                  <td>SEC Rule 10D-1</td>
+                  <td>Compensation Committee</td>
+                  <td><span class="badge badge-low">Low</span></td>
+                  <td>2026-09-01</td>
+                  <td><span class="badge badge-low task-status-badge"><i class="ph ph-check"></i> Resolved</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="action-item-checkbox" checked style="width: 18px; height: 18px;"></td>
+                  <td><strong>Conduct Independent Director Independence Certifications</strong><div style="font-size: 0.8rem; color: var(--color-text-subtle);">Ref: VCG-2026-7734</div></td>
+                  <td>NYSE Rule 303A</td>
+                  <td>Nominating & Governance</td>
+                  <td><span class="badge badge-low">Low</span></td>
+                  <td>2026-09-10</td>
+                  <td><span class="badge badge-low task-status-badge"><i class="ph ph-check"></i> Resolved</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="action-item-checkbox" style="width: 18px; height: 18px;"></td>
+                  <td><strong>Execute 4-Day Cyber Incident Escalation Protocol Table-Top</strong><div style="font-size: 0.8rem; color: var(--color-text-subtle);">Ref: VCG-2026-5521</div></td>
+                  <td>SEC Item 106</td>
+                  <td>Audit Committee</td>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>2026-10-15</td>
+                  <td><span class="badge badge-medium task-status-badge"><i class="ph ph-clock"></i> In Remediation</span></td>
+                </tr>
+                <tr>
+                  <td><input type="checkbox" class="action-item-checkbox" style="width: 18px; height: 18px;"></td>
+                  <td><strong>Update Whistleblower Intake Triage Procedure</strong><div style="font-size: 0.8rem; color: var(--color-text-subtle);">Ref: VCG-2026-4419</div></td>
+                  <td>Sarbanes-Oxley § 301</td>
+                  <td>Audit Committee</td>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td>2026-10-30</td>
+                  <td><span class="badge badge-medium task-status-badge"><i class="ph ph-clock"></i> In Remediation</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB PANEL 3: LOG AUDIT FINDING -->
+      <div class="tab-panel dash-panel" id="panelLogFinding">
+        <div class="card" style="max-width: 780px; margin: 0 auto; padding: var(--space-xl);">
+          <h3 style="margin-bottom: var(--space-xs);"><i class="ph ph-plus-circle" style="color: var(--color-accent);"></i> Log Internal Compliance Observation</h3>
+          <p style="font-size: 0.92rem; margin-bottom: var(--space-lg);">
+            Submit a new compliance finding or internal control deficiency directly into the active Board Audit tracker.
+          </p>
+
+          <form id="logFindingForm">
+            <div class="form-group">
+              <label class="form-label" for="findingTitle">Observation Title</label>
+              <input type="text" id="findingTitle" class="form-input" placeholder="e.g. Third-Party Vendor API Access Security Audit" required>
+            </div>
+
+            <div class="grid grid-3">
+              <div class="form-group">
+                <label class="form-label" for="findingReg">Statutory Framework</label>
+                <select id="findingReg" class="form-select" required>
+                  <option value="SEC Item 106">SEC Item 106 (Cyber)</option>
+                  <option value="SOX 404">SOX 404 (ICFR)</option>
+                  <option value="SEC Rule 10D-1">SEC Rule 10D-1 (Clawbacks)</option>
+                  <option value="EU CSRD">EU CSRD (ESG)</option>
+                  <option value="Delaware General Corp Law">Delaware GCL § 141</option>
+                  <option value="DOJ Corporate Policy">DOJ Compliance Guidelines</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="findingCommittee">Oversight Committee</label>
+                <select id="findingCommittee" class="form-select" required>
+                  <option value="Audit Committee">Audit Committee</option>
+                  <option value="Nominating & Governance">Nominating & Governance</option>
+                  <option value="Compensation Committee">Compensation Committee</option>
+                  <option value="Full Board of Directors">Full Board of Directors</option>
+                  <option value="Risk Committee">Risk Committee</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="findingSeverity">Risk Severity</label>
+                <select id="findingSeverity" class="form-select" required>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="Critical">Critical</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-alert success" id="findingSuccessAlert" style="display: none;">
+              <i class="ph ph-check-circle"></i> Observation successfully logged and prepended to the active action items register.
+            </div>
+
+            <button type="submit" class="btn btn-accent" style="margin-top: var(--space-sm);">
+              <i class="ph ph-floppy-disk"></i> Register Observation to Table
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- TAB PANEL 4: CONFIDENTIAL DOCUMENT VAULT -->
+      <div class="tab-panel dash-panel" id="panelVault">
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: 10px;">
+            <div>
+              <h3 style="margin-bottom: 2px;"><i class="ph ph-lock-key" style="color: var(--color-accent);"></i> Air-Gapped Deliberative Record Vault</h3>
+              <span style="font-size: 0.85rem; color: var(--color-text-subtle);">AES-256 encrypted repository for privileged committee workpapers</span>
+            </div>
+            <span class="badge badge-low"><i class="ph ph-shield-check"></i> Zero-Knowledge Encryption</span>
+          </div>
+
+          <div class="table-responsive">
+            <table class="governance-table">
+              <thead>
+                <tr>
+                  <th>Document Name</th>
+                  <th>Classification</th>
+                  <th>Encryption Hash</th>
+                  <th>Uploaded Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Q3 Board Audit Committee Minutes (Privileged)</strong></td>
+                  <td><span class="badge badge-high">Attorney-Client Work Product</span></td>
+                  <td><code>0x8F92...B4C1</code></td>
+                  <td>2026-09-12</td>
+                  <td>
+                    <button type="button" class="btn btn-outline vault-download-btn" data-doc="Q3 Board Audit Committee Minutes (Privileged)" style="padding: 6px 14px; font-size: 0.82rem;">
+                      <i class="ph ph-download"></i> Decrypt & Download
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Form 10-Q Pre-Filing Regulatory Clearance Memo</strong></td>
+                  <td><span class="badge badge-medium">Confidential Advisory</span></td>
+                  <td><code>0x3A11...E982</code></td>
+                  <td>2026-09-10</td>
+                  <td>
+                    <button type="button" class="btn btn-outline vault-download-btn" data-doc="Form 10-Q Pre-Filing Regulatory Clearance Memo" style="padding: 6px 14px; font-size: 0.82rem;">
+                      <i class="ph ph-download"></i> Decrypt & Download
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>2026 Director Independence & Affiliation Register</strong></td>
+                  <td><span class="badge badge-low">Statutory Disclosure</span></td>
+                  <td><code>0xC441...712D</code></td>
+                  <td>2026-08-28</td>
+                  <td>
+                    <button type="button" class="btn btn-outline vault-download-btn" data-doc="2026 Director Independence & Affiliation Register" style="padding: 6px 14px; font-size: 0.82rem;">
+                      <i class="ph ph-download"></i> Decrypt & Download
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>SEC Item 106 Cyber Incident Table-Top Playbook</strong></td>
+                  <td><span class="badge badge-high">Crisis Protocol</span></td>
+                  <td><code>0x7E09...55AA</code></td>
+                  <td>2026-08-15</td>
+                  <td>
+                    <button type="button" class="btn btn-outline vault-download-btn" data-doc="SEC Item 106 Cyber Incident Table-Top Playbook" style="padding: 6px 14px; font-size: 0.82rem;">
+                      <i class="ph ph-download"></i> Decrypt & Download
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="color: #ffffff; margin-bottom: var(--space-md);">
+            <span class="logo-mark"><i class="ph ph-scales"></i></span>
+            <span>Veritas & Crown</span>
+          </a>
+          <p style="margin-bottom: var(--space-md);">
+            Premier international corporate governance, board advisory, regulatory compliance defense, and fiduciary oversight counsel.
+          </p>
+          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">
+            Offices: New York • London • Singapore • Zurich • Washington D.C.
+          </div>
+        </div>
+
+        <div>
+          <h4>Advisory Practices</h4>
+          <div class="footer-links">
+            <a href="services.html#board-composition">Board Composition</a>
+            <a href="services.html#regulatory-compliance">SEC & DOJ Defense</a>
+            <a href="services.html#esg-oversight">ESG Governance</a>
+            <a href="services.html#erm-internal-controls">ERM & SOX 404</a>
+            <a href="services.html#exec-comp-ethics">Executive Ethics</a>
+            <a href="services.html#ai-cyber-governance">AI & Cyber Oversight</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Firm & Intelligence</h4>
+          <div class="footer-links">
+            <a href="about.html">Institutional Heritage</a>
+            <a href="about.html#leadership">Senior Advisory Fellows</a>
+            <a href="blog.html">Governance Intelligence Hub</a>
+            <a href="blog-single.html">SEC AI Whitepaper</a>
+            <a href="coming-soon.html">AI Governance Engine</a>
+            <a href="dashboard.html">Client Portal</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Board Engagement</h4>
+          <div class="footer-links">
+            <a href="contact.html">Confidential Consultation</a>
+            <a href="contact.html#locations">Global Office Directory</a>
+            <a href="home2.html#diagnostic">Governance Diagnostic</a>
+            <a href="login.html">Client Login</a>
+            <a href="register.html">Entity Onboarding</a>
+            <a href="404.html">Security Docket 404</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Veritas & Crown Governance Partners LLC. All rights reserved.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="about.html#charter" style="color: inherit;">Global Ethics Charter</a>
+          <a href="about.html" style="color: inherit;">Confidentiality Standard</a>
+          <a href="contact.html" style="color: inherit;">Encrypted Communications</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
