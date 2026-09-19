@@ -110,16 +110,16 @@ Write-Host "`n--- Checking Auth Pages (Login / Register) Constraints ---" -Foreg
 $loginContent = Get-Content (Join-Path $dir "login.html") -Raw
 $regContent = Get-Content (Join-Path $dir "register.html") -Raw
 
-if ($loginContent.Contains("theme-toggle-btn") -or $loginContent.Contains("desktopThemeToggle")) {
-  $errors.Add("login.html: Theme toggle must NOT be present on auth pages (Step 6)")
+if ($loginContent.Contains("theme-toggle-btn") -and $loginContent.Contains("rtl-toggle-btn")) {
+  $passed.Add("login.html: Theme and RTL toggle buttons are present")
 } else {
-  $passed.Add("login.html: No theme toggle present")
+  $errors.Add("login.html: Theme or RTL toggle button is missing")
 }
 
-if ($regContent.Contains("theme-toggle-btn") -or $regContent.Contains("desktopThemeToggle")) {
-  $errors.Add("register.html: Theme toggle must NOT be present on auth pages (Step 6)")
+if ($regContent.Contains("theme-toggle-btn") -and $regContent.Contains("rtl-toggle-btn")) {
+  $passed.Add("register.html: Theme and RTL toggle buttons are present")
 } else {
-  $passed.Add("register.html: No theme toggle present")
+  $errors.Add("register.html: Theme or RTL toggle button is missing")
 }
 
 if ($loginContent.Contains("Return to Home") -or $loginContent.Contains("Back to Home")) {

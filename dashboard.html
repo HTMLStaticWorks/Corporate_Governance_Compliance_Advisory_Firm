@@ -87,164 +87,244 @@
 
   <!-- DASHBOARD WRAPPER -->
   <main class="dashboard-wrapper">
-    <div class="container">
-      
-      <!-- Top Client Header Bar -->
-      <div class="dashboard-header-bar">
-        <div>
-          <div class="client-badge-row">
-            <h1 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 0;">Institutional Client Portal</h1>
-            <span class="badge badge-low"><i class="ph ph-shield-check"></i> Enterprise Active Retainer</span>
-          </div>
-          <p style="font-size: 0.95rem; color: var(--color-text-subtle); margin-top: 4px;">
-            Client Entity: <strong>Apex Global Enterprise Ltd (NYSE: APEX)</strong> • Lead Partner: <strong>Arthur Pendelton, Esq.</strong>
-          </p>
-        </div>
+    <div class="dash-layout">
 
-        <div style="display: flex; gap: 10px;">
-          <a href="contact.html" class="btn btn-outline" style="padding: 10px 18px; font-size: 0.9rem;">
-            <i class="ph ph-phone"></i> Emergency Partner Hotline
-          </a>
-          <button type="button" class="btn btn-accent" style="padding: 10px 18px; font-size: 0.9rem;" onclick="alert('Exporting Q3 Comprehensive Fiduciary Audit Report (PDF)...');">
-            <i class="ph ph-download-simple"></i> Export Board Dossier
+      <!-- DASHBOARD SIDEBAR MENU -->
+      <aside class="dash-sidebar" id="dashSidebar" aria-label="Dashboard Sidebar Menu">
+        <div class="dash-sidebar-header">
+          <div class="dash-brand">
+            <span class="logo-mark"><i class="ph ph-scales"></i></span>
+            <div class="dash-brand-text">
+              <span class="dash-brand-title">Veritas & Crown</span>
+              <span class="dash-brand-sub">Client Portal</span>
+            </div>
+          </div>
+          <button type="button" class="dash-sidebar-close" id="dashSidebarClose" aria-label="Close Sidebar Menu">
+            <i class="ph ph-x"></i>
           </button>
         </div>
-      </div>
 
-      <!-- Live Fiduciary Stats Grid -->
-      <div class="dash-stats-grid">
-        <div class="stat-box">
-          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Governance Health Score</span>
-          <div class="stat-box-num" id="dashComplianceScore">94%</div>
-          <span style="font-size: 0.8rem; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
-            <i class="ph ph-trend-up"></i> +4.2% since Q2 Audit
-          </span>
+        <div class="dash-client-card">
+          <div class="dash-client-name">Apex Global Enterprise</div>
+          <div class="dash-client-ticker">NYSE: APEX</div>
+          <span class="badge badge-low"><i class="ph ph-shield-check"></i> Enterprise Retainer</span>
         </div>
 
-        <div class="stat-box">
-          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">SOX 404 Control Health</span>
-          <div class="stat-box-num" style="color: var(--color-success);">Cleared</div>
-          <span style="font-size: 0.8rem; color: var(--color-text-subtle);">0 Material Weaknesses Identified</span>
+        <nav class="dash-sidebar-nav">
+          <span class="dash-nav-category">Governance Panels</span>
+          <button type="button" class="dash-nav-item dash-nav-btn active" data-target="panelOverview">
+            <i class="ph ph-squares-four"></i>
+            <span>Overview & Filings</span>
+          </button>
+          <button type="button" class="dash-nav-item dash-nav-btn" data-target="panelActions">
+            <i class="ph ph-check-square"></i>
+            <span>Committee Actions</span>
+          </button>
+          <button type="button" class="dash-nav-item dash-nav-btn" data-target="panelLogFinding">
+            <i class="ph ph-plus-circle"></i>
+            <span>Log Observation</span>
+          </button>
+          <button type="button" class="dash-nav-item dash-nav-btn" data-target="panelVault">
+            <i class="ph ph-folder-lock"></i>
+            <span>Cryptographic Vault</span>
+          </button>
+
+          <span class="dash-nav-category" style="margin-top: 18px;">Quick Shortcuts</span>
+          <a href="services.html" class="dash-nav-item">
+            <i class="ph ph-briefcase"></i>
+            <span>Advisory Practices</span>
+          </a>
+          <a href="contact.html" class="dash-nav-item">
+            <i class="ph ph-phone-call"></i>
+            <span>Emergency Hotline</span>
+          </a>
+          <a href="index.html" class="dash-nav-item">
+            <i class="ph ph-house"></i>
+            <span>Back to Site</span>
+          </a>
+        </nav>
+
+        <div class="dash-sidebar-footer">
+          <div class="dash-user-avatar"><i class="ph ph-user"></i></div>
+          <div class="dash-user-info">
+            <div class="dash-user-name">Arthur Pendelton, Esq.</div>
+            <div class="dash-user-role">Lead Senior Partner</div>
+          </div>
+          <a href="login.html" class="dash-logout-btn" title="Logout" aria-label="Logout"><i class="ph ph-sign-out"></i></a>
+        </div>
+      </aside>
+
+      <!-- SIDEBAR BACKDROP FOR MOBILE -->
+      <div class="dash-sidebar-backdrop" id="dashSidebarBackdrop"></div>
+
+      <!-- MAIN DASHBOARD CONTENT AREA -->
+      <div class="dash-main-content">
+
+        <!-- Top Utility Bar -->
+        <div class="dash-top-bar">
+          <div class="dash-top-left">
+            <button type="button" class="btn btn-outline dash-sidebar-toggle-btn" id="dashSidebarToggle" aria-label="Toggle Dashboard Menu">
+              <i class="ph ph-sidebar-simple"></i> Sidebar Menu
+            </button>
+            <span class="dash-top-title">Institutional Advisory Workspace</span>
+          </div>
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-outline" style="padding: 8px 14px; font-size: 0.88rem;">
+              <i class="ph ph-phone"></i> Emergency Partner Hotline
+            </a>
+            <button type="button" class="btn btn-accent" style="padding: 8px 14px; font-size: 0.88rem;" onclick="alert('Exporting Q3 Comprehensive Fiduciary Audit Report (PDF)...');">
+              <i class="ph ph-download-simple"></i> Export Board Dossier
+            </button>
+          </div>
         </div>
 
-        <div class="stat-box">
-          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next SEC Regulatory Deadline</span>
-          <div class="stat-box-num" style="font-size: 1.6rem; color: var(--color-primary);">18 Days</div>
-          <span style="font-size: 0.8rem; color: var(--color-warning);">Form 10-Q Pre-Filing Review</span>
-        </div>
-
-        <div class="stat-box">
-          <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next Board Executive Session</span>
-          <div class="stat-box-num" style="font-size: 1.6rem; color: var(--color-primary);">Oct 14</div>
-          <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Audit & Governance Committees</span>
-        </div>
-      </div>
-
-      <!-- Dashboard Interactive Tabs Navigation -->
-      <div class="tabs-nav" style="justify-content: flex-start; margin-bottom: var(--space-lg);">
-        <button type="button" class="tab-btn dash-nav-btn active" data-target="panelOverview">
-          <i class="ph ph-squares-four"></i> Overview & Filing Calendar
-        </button>
-        <button type="button" class="tab-btn dash-nav-btn" data-target="panelActions">
-          <i class="ph ph-check-square"></i> Committee Action Items
-        </button>
-        <button type="button" class="tab-btn dash-nav-btn" data-target="panelLogFinding">
-          <i class="ph ph-plus-circle"></i> Log Compliance Observation
-        </button>
-        <button type="button" class="tab-btn dash-nav-btn" data-target="panelVault">
-          <i class="ph ph-folder-lock"></i> Cryptographic Document Vault
-        </button>
-      </div>
-
-      <!-- Download Toast Notification -->
-      <div id="vaultDownloadToast" class="form-alert success" style="display: none; margin-bottom: var(--space-md);"></div>
-
-      <!-- TAB PANEL 1: OVERVIEW & FILING CALENDAR -->
-      <div class="tab-panel dash-panel active" id="panelOverview">
-        <div class="grid grid-2">
-          
-          <!-- Upcoming Filings Table -->
-          <div class="card">
-            <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-calendar-check" style="color: var(--color-accent);"></i> 2026 Statutory Filing Deadlines</h3>
-            <div class="table-responsive">
-              <table class="governance-table">
-                <thead>
-                  <tr>
-                    <th>Filing / Matter</th>
-                    <th>Regulator</th>
-                    <th>Due Date</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Form 10-Q (Q3)</strong></td>
-                    <td>U.S. SEC</td>
-                    <td>Oct 15, 2026</td>
-                    <td><span class="badge badge-low">Draft Cleared</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Item 106 Cyber Assessment</strong></td>
-                    <td>Audit Committee</td>
-                    <td>Nov 01, 2026</td>
-                    <td><span class="badge badge-medium">Under Review</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>DEF 14A Proxy Peer Review</strong></td>
-                    <td>Comp Committee</td>
-                    <td>Dec 10, 2026</td>
-                    <td><span class="badge badge-low">On Schedule</span></td>
-                  </tr>
-                  <tr>
-                    <td><strong>EU CSRD Double Materiality</strong></td>
-                    <td>ESMA / EU</td>
-                    <td>Jan 15, 2027</td>
-                    <td><span class="badge badge-high">Data Gap Audit</span></td>
-                  </tr>
-                </tbody>
-              </table>
+        <!-- Top Client Header Bar -->
+        <div class="dashboard-header-bar">
+          <div>
+            <div class="client-badge-row">
+              <h1 style="font-size: clamp(1.8rem, 3.2vw, 2.5rem); margin-bottom: 0;">Institutional Client Portal</h1>
+              <span class="badge badge-low"><i class="ph ph-shield-check"></i> Enterprise Active Retainer</span>
             </div>
+            <p style="font-size: 0.95rem; color: var(--color-text-subtle); margin-top: 4px;">
+              Client Entity: <strong>Apex Global Enterprise Ltd (NYSE: APEX)</strong> • Lead Partner: <strong>Arthur Pendelton, Esq.</strong>
+            </p>
+          </div>
+        </div>
+
+        <!-- Live Fiduciary Stats Grid -->
+        <div class="dash-stats-grid">
+          <div class="stat-box">
+            <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Governance Health Score</span>
+            <div class="stat-box-num" id="dashComplianceScore">94%</div>
+            <span style="font-size: 0.8rem; color: var(--color-success); display: flex; align-items: center; gap: 4px;">
+              <i class="ph ph-trend-up"></i> +4.2% since Q2 Audit
+            </span>
           </div>
 
-          <!-- Active Practice Advisory Updates -->
-          <div class="card">
-            <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-bell-ringing" style="color: var(--color-accent);"></i> Lead Partner Advisories</h3>
-            <div style="display: flex; flex-direction: column; gap: 14px;">
-              <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-accent);">
-                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
-                  <strong style="color: var(--color-primary);">Arthur Pendelton, Senior Partner</strong>
-                  <span style="color: var(--color-text-subtle);">Today, 09:30 EST</span>
-                </div>
-                <p style="font-size: 0.9rem; margin-bottom: 0;">
-                  "Completed pre-clearance on the Q3 Form 10-Q executive clawback footnote disclosures. All provisions now align with SEC Rule 10D-1 standards."
-                </p>
+          <div class="stat-box">
+            <span style="font-size: 0.85rem; color: var(--color-text-subtle);">SOX 404 Control Health</span>
+            <div class="stat-box-num" style="color: var(--color-success);">Cleared</div>
+            <span style="font-size: 0.8rem; color: var(--color-text-subtle);">0 Material Weaknesses Identified</span>
+          </div>
+
+          <div class="stat-box">
+            <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next SEC Regulatory Deadline</span>
+            <div class="stat-box-num" style="font-size: 1.6rem;">18 Days</div>
+            <span style="font-size: 0.8rem; color: var(--color-warning);">Form 10-Q Pre-Filing Review</span>
+          </div>
+
+          <div class="stat-box">
+            <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Next Board Executive Session</span>
+            <div class="stat-box-num" style="font-size: 1.6rem;">Oct 14</div>
+            <span style="font-size: 0.8rem; color: var(--color-text-subtle);">Audit & Governance Committees</span>
+          </div>
+        </div>
+
+        <!-- Dashboard Interactive Tabs Navigation -->
+        <div class="tabs-nav" style="margin-bottom: var(--space-lg);">
+          <button type="button" class="tab-btn dash-nav-btn active" data-target="panelOverview">
+            <i class="ph ph-squares-four"></i> Overview & Filing Calendar
+          </button>
+          <button type="button" class="tab-btn dash-nav-btn" data-target="panelActions">
+            <i class="ph ph-check-square"></i> Committee Action Items
+          </button>
+          <button type="button" class="tab-btn dash-nav-btn" data-target="panelLogFinding">
+            <i class="ph ph-plus-circle"></i> Log Compliance Observation
+          </button>
+          <button type="button" class="tab-btn dash-nav-btn" data-target="panelVault">
+            <i class="ph ph-folder-lock"></i> Cryptographic Document Vault
+          </button>
+        </div>
+
+        <!-- Download Toast Notification -->
+        <div id="vaultDownloadToast" class="form-alert success" style="display: none; margin-bottom: var(--space-md);"></div>
+
+        <!-- TAB PANEL 1: OVERVIEW & FILING CALENDAR -->
+        <div class="tab-panel dash-panel active" id="panelOverview">
+          <div class="grid grid-2">
+            
+            <!-- Upcoming Filings Table -->
+            <div class="card">
+              <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-calendar-check" style="color: var(--color-accent);"></i> 2026 Statutory Filing Deadlines</h3>
+              <div class="table-responsive">
+                <table class="governance-table">
+                  <thead>
+                    <tr>
+                      <th>Filing / Matter</th>
+                      <th>Regulator</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Form 10-Q (Q3)</strong></td>
+                      <td>U.S. SEC</td>
+                      <td>Oct 15, 2026</td>
+                      <td><span class="badge badge-low">Draft Cleared</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Item 106 Cyber Assessment</strong></td>
+                      <td>Audit Committee</td>
+                      <td>Nov 01, 2026</td>
+                      <td><span class="badge badge-medium">Under Review</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>DEF 14A Proxy Peer Review</strong></td>
+                      <td>Comp Committee</td>
+                      <td>Dec 10, 2026</td>
+                      <td><span class="badge badge-low">On Schedule</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong>EU CSRD Double Materiality</strong></td>
+                      <td>ESMA / EU</td>
+                      <td>Jan 15, 2027</td>
+                      <td><span class="badge badge-high">Data Gap Audit</span></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
+            </div>
 
-              <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-secondary);">
-                <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px;">
-                  <strong style="color: var(--color-primary);">Dr. Evelyn Mercer, Audit Practice</strong>
-                  <span style="color: var(--color-text-subtle);">Yesterday, 16:15 EST</span>
+            <!-- Lead Partner Advisories -->
+            <div class="card">
+              <h3 style="margin-bottom: var(--space-md);"><i class="ph ph-bell-ringing" style="color: var(--color-accent);"></i> Lead Partner Advisories</h3>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-accent);">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
+                    <strong style="color: var(--color-text);">Arthur Pendelton, Senior Partner</strong>
+                    <span style="color: var(--color-text-subtle);">Today, 09:30 EST</span>
+                  </div>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">
+                    "Completed pre-clearance on the Q3 Form 10-Q executive clawback footnote disclosures. All provisions now align with SEC Rule 10D-1 standards."
+                  </p>
                 </div>
-                <p style="font-size: 0.9rem; margin-bottom: 0;">
-                  "Met in executive session with the external auditor. No scope limitations or unresolved accounting disagreements were identified."
-                </p>
+
+                <div style="padding: 12px; border-radius: var(--radius-sm); background: var(--color-surface-soft); border-left: 4px solid var(--color-secondary);">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 4px; flex-wrap: wrap; gap: 4px;">
+                    <strong style="color: var(--color-text);">Dr. Evelyn Mercer, Audit Practice</strong>
+                    <span style="color: var(--color-text-subtle);">Yesterday, 16:15 EST</span>
+                  </div>
+                  <p style="font-size: 0.9rem; margin-bottom: 0;">
+                    "Met in executive session with the external auditor. No scope limitations or unresolved accounting disagreements were identified."
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
-      </div>
 
-      <!-- TAB PANEL 2: COMMITTEE ACTION ITEMS -->
-      <div class="tab-panel dash-panel" id="panelActions">
-        <div class="card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: 10px;">
-            <div>
-              <h3 style="margin-bottom: 2px;"><i class="ph ph-list-checks" style="color: var(--color-accent);"></i> Boardroom Action Items & Remediations</h3>
-              <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Check off resolved items to dynamically update your governance health score</span>
+        <!-- TAB PANEL 2: COMMITTEE ACTION ITEMS -->
+        <div class="tab-panel dash-panel" id="panelActions">
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md); flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="margin-bottom: 2px;"><i class="ph ph-list-checks" style="color: var(--color-accent);"></i> Boardroom Action Items & Remediations</h3>
+                <span style="font-size: 0.85rem; color: var(--color-text-subtle);">Check off resolved items to dynamically update your governance health score</span>
+              </div>
+              <span class="badge badge-low"><i class="ph ph-arrows-clockwise"></i> Live Interactive Sync</span>
             </div>
-            <span class="badge badge-low"><i class="ph ph-arrows-clockwise"></i> Live Interactive Sync</span>
-          </div>
 
           <div class="table-responsive">
             <table class="governance-table">
@@ -443,15 +523,29 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <a href="index.html" class="logo" style="color: #ffffff; margin-bottom: var(--space-md);">
+          <a href="index.html" class="logo" style="margin-bottom: var(--space-md);">
             <span class="logo-mark"><i class="ph ph-scales"></i></span>
             <span>Veritas & Crown</span>
           </a>
-          <p style="margin-bottom: var(--space-md);">
+          <p style="margin-bottom: var(--space-sm);">
             Premier international corporate governance, board advisory, regulatory compliance defense, and fiduciary oversight counsel.
           </p>
-          <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.65);">
+          <div style="font-size: 0.85rem; margin-bottom: var(--space-md);">
             Offices: New York • London • Singapore • Zurich • Washington D.C.
+          </div>
+          <div class="footer-social-row">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn" title="Follow us on LinkedIn">
+              <i class="ph ph-linkedin-logo"></i>
+            </a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X (Twitter)" title="Follow us on X">
+              <i class="ph ph-x-logo"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube" title="Watch our briefings on YouTube">
+              <i class="ph ph-youtube-logo"></i>
+            </a>
+            <a href="contact.html" class="social-btn" aria-label="Global Network" title="Global Advisory Network">
+              <i class="ph ph-globe-hemisphere-west"></i>
+            </a>
           </div>
         </div>
 
@@ -504,6 +598,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll to top" title="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
 
   <script src="assets/js/main.js"></script>
   <script src="assets/js/dashboard.js"></script>

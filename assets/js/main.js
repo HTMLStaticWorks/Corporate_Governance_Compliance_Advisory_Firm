@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initDiagnosticEngine();
   initFormValidation();
   initCountdownTimer();
+  initBackToTop();
+  initPasswordToggle();
 });
 
 /* --------------------------------------------------------------------------
@@ -81,6 +83,7 @@ function initRtl() {
 }
 
 function setRtl(isRtl) {
+  document.documentElement.classList.add('no-transition');
   if (isRtl) {
     document.documentElement.setAttribute('dir', 'rtl');
     document.body.classList.add('rtl');
@@ -88,6 +91,11 @@ function setRtl(isRtl) {
     document.documentElement.setAttribute('dir', 'ltr');
     document.body.classList.remove('rtl');
   }
+  // Force browser reflow to apply RTL immediately without layout animation flash
+  void document.documentElement.offsetHeight;
+  requestAnimationFrame(() => {
+    document.documentElement.classList.remove('no-transition');
+  });
 }
 
 /* --------------------------------------------------------------------------
@@ -482,3 +490,54 @@ function initCountdownTimer() {
   updateTimer();
   setInterval(updateTimer, 1000);
 }
+
+/* --------------------------------------------------------------------------
+   11. FLOATING BACK TO TOP BUTTON
+   -------------------------------------------------------------------------- */
+function initBackToTop() {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (!backToTopBtn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('active');
+    } else {
+      backToTopBtn.classList.remove('active');
+    }
+  }, { passive: true });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+/* --------------------------------------------------------------------------
+   12. PASSWORD VISIBILITY TOGGLE (EYE ICON)
+   -------------------------------------------------------------------------- */
+function initPasswordToggle() {
+  const toggleBtns = document.querySelectorAll('.toggle-password-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrapper = btn.closest('.password-wrapper') || btn.parentElement;
+      const input = wrapper ? wrapper.querySelector('input') : null;
+      if (!input) return;
+
+      const icon = btn.querySelector('i');
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) {
+          icon.className = 'ph ph-eye-slash';
+        }
+      } else {
+        input.type = 'password';
+        if (icon) {
+          icon.className = 'ph ph-eye';
+        }
+      }
+    });
+  });
+}
+

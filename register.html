@@ -13,6 +13,16 @@
 </head>
 <body class="auth-page">
 
+  <!-- Top Utility Controls (Theme & RTL) -->
+  <div class="auth-top-actions">
+    <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+      <i class="ph ph-arrows-left-right"></i>
+    </button>
+    <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+      <i class="ph ph-moon"></i>
+    </button>
+  </div>
+
   <!-- Centered Institutional Registration Card -->
   <main class="auth-card" style="max-width: 520px;">
     <div class="auth-header">
@@ -28,17 +38,16 @@
 
     <!-- Registration Form -->
     <form data-validate id="registerForm">
-      <div class="grid grid-2">
-        <div class="form-group">
-          <label class="form-label" for="regEntity">Legal Entity Name</label>
-          <input type="text" id="regEntity" name="entity" class="form-input" placeholder="e.g. Apex Global Corp" required>
-          <div class="field-error" id="regEntityError">Corporate entity name is required.</div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="regOfficer">Authorized Officer</label>
-          <input type="text" id="regOfficer" name="officer" class="form-input" placeholder="e.g. Eleanor Vance" required>
-          <div class="field-error" id="regOfficerError">Authorized officer name is required.</div>
-        </div>
+      <div class="form-group">
+        <label class="form-label" for="regEntity">Legal Entity Name</label>
+        <input type="text" id="regEntity" name="entity" class="form-input" placeholder="e.g. Apex Global Corp" required>
+        <div class="field-error" id="regEntityError">Corporate entity name is required.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regOfficer">Authorized Officer</label>
+        <input type="text" id="regOfficer" name="officer" class="form-input" placeholder="e.g. Eleanor Vance" required>
+        <div class="field-error" id="regOfficerError">Authorized officer name is required.</div>
       </div>
 
       <div class="form-group">
@@ -47,24 +56,33 @@
         <div class="field-error" id="regEmailError">Please enter a valid corporate email.</div>
       </div>
 
-      <div class="grid grid-2">
-        <div class="form-group">
-          <label class="form-label" for="regPassword">Security Passphrase</label>
+      <div class="form-group">
+        <label class="form-label" for="regPassword">Security Passphrase</label>
+        <div class="password-wrapper">
           <input type="password" id="regPassword" name="password" class="form-input" placeholder="Min. 8 characters" required autocomplete="new-password">
-          <div class="field-error" id="regPasswordError">Must be at least 8 characters.</div>
+          <button type="button" class="toggle-password-btn" aria-label="Toggle password visibility" title="Toggle passphrase visibility">
+            <i class="ph ph-eye"></i>
+          </button>
         </div>
-        <div class="form-group">
-          <label class="form-label" for="confirmPassword">Confirm Passphrase</label>
+        <div class="field-error" id="regPasswordError">Must be at least 8 characters.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="confirmPassword">Confirm Passphrase</label>
+        <div class="password-wrapper">
           <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Re-enter passphrase" required autocomplete="new-password">
-          <div class="field-error" id="confirmPasswordError">Passphrases must match.</div>
+          <button type="button" class="toggle-password-btn" aria-label="Toggle password visibility" title="Toggle passphrase visibility">
+            <i class="ph ph-eye"></i>
+          </button>
         </div>
+        <div class="field-error" id="confirmPasswordError">Passphrases must match.</div>
       </div>
 
       <!-- Mandatory Terms & Conditions Checkbox (Step 12 & QA Requirement) -->
       <div class="form-group" style="margin-bottom: var(--space-lg);">
         <label class="form-check">
           <input type="checkbox" id="termsCheck" name="terms" required>
-          <span>I certify that I am an authorized corporate officer and agree to the <a href="about.html#charter" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Fiduciary Terms & Conditions</a> and strict client confidentiality safeguards.</span>
+          <span style="font-size: 0.82rem; color: var(--color-text-subtle);">I certify that I am an authorized corporate officer and agree to the <a href="about.html#charter" target="_blank" style="color: var(--color-accent); text-decoration: underline;">Fiduciary Terms & Conditions</a> and strict client confidentiality safeguards.</span>
         </label>
         <div class="field-error" id="termsCheckError">You must accept the Terms & Conditions to proceed.</div>
       </div>
@@ -78,15 +96,21 @@
 
     <!-- SSO Alternative -->
     <div class="auth-divider">
-      <span>Or connect via Corporate Identity</span>
+      <span>Or connect via Social & Corporate Identity</span>
     </div>
 
     <div class="sso-buttons">
       <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
-        <i class="ph ph-windows-logo"></i> Azure AD / Entra
+        <i class="ph ph-google-logo"></i> Google
       </button>
       <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
-        <i class="ph ph-shield-check"></i> Okta Federation
+        <i class="ph ph-linkedin-logo"></i> LinkedIn
+      </button>
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-windows-logo"></i> Microsoft
+      </button>
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-shield-check"></i> Okta
       </button>
     </div>
 
@@ -96,6 +120,11 @@
       <a href="login.html" style="color: var(--color-accent); font-weight: var(--weight-btn); margin-left: 4px;">Sign In to Portal</a>
     </div>
   </main>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll to top" title="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
 
   <script src="assets/js/main.js"></script>
 </body>

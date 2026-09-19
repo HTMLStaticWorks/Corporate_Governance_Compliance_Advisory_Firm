@@ -81,3 +81,9 @@ body.rtl .nav-link.active::after {
   left: auto;
   right: 0;
 }
+
+html[dir="rtl"] .auth-top-actions,
+body.rtl .auth-top-actions {
+  right: auto;
+  left: 20px;
+}

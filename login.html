@@ -13,6 +13,16 @@
 </head>
 <body class="auth-page">
 
+  <!-- Top Utility Controls (Theme & RTL) -->
+  <div class="auth-top-actions">
+    <button type="button" class="btn-icon-square rtl-toggle-btn" aria-label="Toggle text direction" title="Toggle RTL layout">
+      <i class="ph ph-arrows-left-right"></i>
+    </button>
+    <button type="button" class="btn-icon-square theme-toggle-btn" aria-label="Switch theme mode" title="Toggle Dark/Light mode">
+      <i class="ph ph-moon"></i>
+    </button>
+  </div>
+
   <!-- Centered Institutional Authentication Card -->
   <main class="auth-card">
     <div class="auth-header">
@@ -35,18 +45,23 @@
       </div>
 
       <div class="form-group">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <label class="form-label" for="loginPassword" style="margin-bottom: 0;">Security Passphrase</label>
+        <label class="form-label" for="loginPassword">Security Passphrase</label>
+        <div class="password-wrapper">
+          <input type="password" id="loginPassword" name="password" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
+          <button type="button" class="toggle-password-btn" aria-label="Toggle password visibility" title="Toggle passphrase visibility">
+            <i class="ph ph-eye"></i>
+          </button>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 6px;">
           <a href="contact.html" style="font-size: 0.8rem; color: var(--color-accent);">Forgot Passphrase?</a>
         </div>
-        <input type="password" id="loginPassword" name="password" class="form-input" placeholder="••••••••••••" required autocomplete="current-password">
         <div class="field-error" id="loginPasswordError">Passphrase must be at least 8 characters.</div>
       </div>
 
       <div class="form-group" style="margin-bottom: var(--space-lg);">
         <label class="form-check">
           <input type="checkbox" id="rememberMe">
-          <span>Remember secure hardware token for 14 days</span>
+          <span style="font-size: 0.82rem; color: var(--color-text-subtle);">Remember secure hardware token for 14 days</span>
         </label>
       </div>
 
@@ -59,15 +74,21 @@
 
     <!-- SSO Section -->
     <div class="auth-divider">
-      <span>Or authenticate via Enterprise Identity Provider</span>
+      <span>Or authenticate via Social & Enterprise Identity</span>
     </div>
 
     <div class="sso-buttons">
       <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
-        <i class="ph ph-windows-logo"></i> Microsoft Entra ID
+        <i class="ph ph-google-logo"></i> Google
       </button>
       <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
-        <i class="ph ph-shield-check"></i> Okta SSO
+        <i class="ph ph-linkedin-logo"></i> LinkedIn
+      </button>
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-windows-logo"></i> Microsoft
+      </button>
+      <button type="button" class="btn btn-outline" style="font-size: 0.88rem; padding: 10px;" onclick="window.location.href='dashboard.html'">
+        <i class="ph ph-shield-check"></i> Okta
       </button>
     </div>
 
@@ -77,6 +98,11 @@
       <a href="register.html" style="color: var(--color-accent); font-weight: var(--weight-btn); margin-left: 4px;">Register Entity Credentials</a>
     </div>
   </main>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll to top" title="Back to top">
+    <i class="ph ph-caret-up"></i>
+  </button>
 
   <script src="assets/js/main.js"></script>
 </body>
