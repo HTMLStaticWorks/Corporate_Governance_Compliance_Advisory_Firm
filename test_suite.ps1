@@ -15,9 +15,9 @@ Write-Host "======================================================" -ForegroundC
 $requiredFiles = @(
   "index.html", "home2.html", "services.html", "about.html",
   "blog.html", "blog-single.html", "contact.html", "login.html",
-  "register.html", "dashboard.html", "404.html", "coming-soon.html",
+  "register.html", "404.html", "coming-soon.html",
   "assets\css\style.css", "assets\css\rtl.css",
-  "assets\js\main.js", "assets\js\dashboard.js", "README.md"
+  "assets\js\main.js", "README.md"
 )
 
 foreach ($f in $requiredFiles) {
@@ -142,7 +142,7 @@ if ($regContent.Contains("name=`"terms`"")) {
 
 # 6. FIXED NAVBAR MENU VERIFICATION (Step 4)
 Write-Host "`n--- Checking Fixed Menu Items in Standard Pages ---" -ForegroundColor Yellow
-$standardPages = @("index.html", "home2.html", "services.html", "about.html", "blog.html", "contact.html", "dashboard.html")
+$standardPages = @("index.html", "home2.html", "services.html", "about.html", "blog.html", "contact.html")
 
 foreach ($sp in $standardPages) {
   $pageContent = Get-Content (Join-Path $dir $sp) -Raw
@@ -153,11 +153,10 @@ foreach ($sp in $standardPages) {
   $hasAbout = $pageContent.Contains("about.html")
   $hasBlog = $pageContent.Contains("blog.html")
   $hasContact = $pageContent.Contains("contact.html")
-  $hasDashboard = $pageContent.Contains("dashboard.html")
   $hasLogin = $pageContent.Contains(">Login</a>")
   
-  if ($hasHome -and $hasHome2 -and $hasServices -and $hasAbout -and $hasBlog -and $hasContact -and $hasDashboard -and $hasLogin) {
-    $passed.Add("$sp has all required fixed menu items (Home, Home 2, Services, About, Blog, Contact, Dashboard, Login)")
+  if ($hasHome -and $hasHome2 -and $hasServices -and $hasAbout -and $hasBlog -and $hasContact -and $hasLogin) {
+    $passed.Add("$sp has all required fixed menu items (Home, Home 2, Services, About, Blog, Contact, Login)")
   } else {
     $errors.Add("$sp is missing one or more fixed menu items")
   }
