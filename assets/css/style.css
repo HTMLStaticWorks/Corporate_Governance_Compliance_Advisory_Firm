@@ -1254,6 +1254,10 @@ html[dir="rtl"] .card-center .testimonial-author-info {
   font-size: 1.05rem;
   flex-shrink: 0;
   white-space: nowrap;
+  padding-right: 6px;
+  padding-inline-end: 6px;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .range-slider {
@@ -2395,6 +2399,27 @@ body.rtl .back-to-top-btn {
     margin-top: 4px !important;
   }
 
+  /* Footer social media buttons & logo centered in Tab (1024px & 768px) and Mobile (360px) */
+  .footer-social-row,
+  .site-footer .footer-social-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .site-footer .logo {
+    display: inline-flex !important;
+    justify-content: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
+  }
+
   .hero-desc {
     margin-inline: auto !important;
   }
@@ -2562,7 +2587,7 @@ body.rtl .back-to-top-btn {
   /* Diagnostic Matrix responsive layout fixes for mobile & tab */
   .diagnostic-container {
     padding: clamp(16px, 4vw, 24px) !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -2574,6 +2599,9 @@ body.rtl .back-to-top-btn {
     gap: 8px !important;
     flex-wrap: wrap !important;
     width: 100% !important;
+    padding-right: 4px !important;
+    padding-inline-end: 4px !important;
+    box-sizing: border-box !important;
   }
 
   .diagnostic-field-label {
@@ -2589,6 +2617,9 @@ body.rtl .back-to-top-btn {
   .diagnostic-field-val {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
+    padding-right: 8px !important;
+    padding-inline-end: 8px !important;
+    display: inline-block !important;
   }
 
   .tabs-nav {
@@ -2759,6 +2790,18 @@ body.rtl .back-to-top-btn {
     text-align: center;
   }
 
+  .footer-social-row,
+  .site-footer .footer-social-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
   .dash-stats-grid {
     grid-template-columns: 1fr;
   }
@@ -2787,6 +2830,47 @@ body.rtl .back-to-top-btn {
 
   .metrics-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Diagnostic matrix at 360px small mobile to prevent any % symbol clipping */
+  .diagnostic-container {
+    padding: 16px 12px !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  .diagnostic-field-header {
+    gap: 6px !important;
+    padding-right: 6px !important;
+    padding-inline-end: 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .diagnostic-field-label {
+    font-size: 0.88rem !important;
+    line-height: 1.35 !important;
+    text-align: left !important;
+  }
+
+  .diagnostic-field-val {
+    font-size: 0.98rem !important;
+    padding-right: 8px !important;
+    padding-inline-end: 8px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  .footer-social-row,
+  .site-footer .footer-social-row {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-inline: auto !important;
+    width: 100% !important;
+    gap: 10px !important;
   }
 
   .btn:not(.btn-icon-square):not(.hamburger-btn):not(.drawer-close-btn):not(.tab-btn):not(.table-responsive .btn):not(.governance-table .btn):not(.site-header .btn) {
