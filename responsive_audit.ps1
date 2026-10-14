@@ -3,7 +3,7 @@
 # Tests 360px (Mobile), 760px (Tab Portrait), and 1024px (Tab Landscape)
 # ==========================================================================
 
-$dir = "d:\project 2\Corporate Governance & Compliance Advisory Firm"
+$dir = $PSScriptRoot
 $cssPath = Join-Path $dir "assets\css\style.css"
 $css = Get-Content $cssPath -Raw
 

@@ -2,7 +2,7 @@
 # VERITAS & CROWN QA TEST SUITE — 9-STEP AUTOMATED AUDIT
 # ==========================================================================
 
-$dir = "d:\project 2\Corporate Governance & Compliance Advisory Firm"
+$dir = $PSScriptRoot
 $errors = [System.Collections.Generic.List[string]]::new()
 $warnings = [System.Collections.Generic.List[string]]::new()
 $passed = [System.Collections.Generic.List[string]]::new()
@@ -153,10 +153,10 @@ foreach ($sp in $standardPages) {
   $hasAbout = $pageContent.Contains("about.html")
   $hasBlog = $pageContent.Contains("blog.html")
   $hasContact = $pageContent.Contains("contact.html")
-  $hasLogin = $pageContent.Contains(">Login</a>")
+  $hasCTA = $pageContent.Contains("Schedule Consultation") -or $pageContent.Contains("header-cta")
   
-  if ($hasHome -and $hasHome2 -and $hasServices -and $hasAbout -and $hasBlog -and $hasContact -and $hasLogin) {
-    $passed.Add("$sp has all required fixed menu items (Home, Home 2, Services, About, Blog, Contact, Login)")
+  if ($hasHome -and $hasHome2 -and $hasServices -and $hasAbout -and $hasBlog -and $hasContact -and $hasCTA) {
+    $passed.Add("$sp has all required fixed menu items (Home, Home 2, Services, About, Blog, Contact, Primary CTA)")
   } else {
     $errors.Add("$sp is missing one or more fixed menu items")
   }
