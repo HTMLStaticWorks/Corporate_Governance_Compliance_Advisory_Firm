@@ -2581,15 +2581,15 @@ body.rtl .back-to-top-btn {
 /* Board Committee Governance Architecture Grid (Home 2) */
 .board-committee-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
 }
 
 .committee-card {
   background: var(--color-card-bg);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-global);
-  padding: clamp(20px, 2.5vw, 28px);
+  padding: clamp(24px, 2.8vw, 36px);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
@@ -2610,33 +2610,33 @@ body.rtl .back-to-top-btn {
 }
 
 .committee-badge {
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   color: var(--color-accent);
   background: rgba(200, 169, 90, 0.1);
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(200, 169, 90, 0.25);
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   white-space: nowrap;
 }
 
 .committee-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: var(--radius-sm);
   background: var(--color-surface-soft);
   color: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   flex-shrink: 0;
 }
 
 .committee-title {
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   font-weight: var(--weight-h3);
   margin-bottom: var(--space-xs);
   color: var(--color-text);
@@ -2644,9 +2644,9 @@ body.rtl .back-to-top-btn {
 }
 
 .committee-desc {
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   color: var(--color-text-muted);
-  line-height: 1.55;
+  line-height: 1.6;
   margin-bottom: var(--space-md);
 }
 
@@ -2656,21 +2656,21 @@ body.rtl .back-to-top-btn {
   margin: 0 0 var(--space-lg) 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .committee-mandates-list li {
-  font-size: 0.82rem;
+  font-size: 0.88rem;
   color: var(--color-text);
   display: flex;
   align-items: center;
-  gap: 8px;
-  line-height: 1.4;
+  gap: 10px;
+  line-height: 1.45;
 }
 
 .committee-mandates-list li i {
   color: var(--color-success);
-  font-size: 0.95rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
